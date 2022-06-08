@@ -8,9 +8,9 @@ const AboutUs = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-6  ">
-                        <div className="d-flex justify-content-end me-3 ">
-                            <div>
-                                <div className="rol-6 mb-3">
+                        <div className="d-flex justify-content-end alight-items-end">
+                            <div className="col-7">
+                                <div className="rol-6">
                                     <img
                                         src="https://cdn.discordapp.com/attachments/978515025473966083/979333461917708318/unknown.png"
                                         alt=""/>
@@ -21,14 +21,14 @@ const AboutUs = () => {
                                         alt=""/>
                                 </div>
                             </div>
-                            <div className="col-6 d-flex align-items-center ms-3 me-5 ">
+                            <div className="col-4 d-flex align-items-center justify-content-start ms-3 me-5 ">
                                 <img
                                     src="https://cdn.discordapp.com/attachments/978515025473966083/979333516548534352/unknown.png"
                                     alt=""/>
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 d-flex align-items-start justify-content-center flex-column">
+                    <div className="col-6 d-flex align-items-end justify-content-center flex-column">
                        <div className="about-us-text-box">
                            <div className="about-us-title">
                                О нас

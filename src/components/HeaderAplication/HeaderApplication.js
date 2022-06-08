@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import xxx from "../../icons/XXX.svg";
 import check from "../../icons/check.svg"
 import {useState} from "react";
+import {useNavigate} from "react-router";
 
 const HeaderApplication = ({setToggleApplication}) => {
     const [aplName, setAplName] = useState("")
@@ -12,6 +13,7 @@ const HeaderApplication = ({setToggleApplication}) => {
     const [telError, setTelError] = useState("Заполните поле для номера телефона")
     const [formValid, setFormValid] = useState(false)
     const [answer, setAnswer] = useState(false)
+    const nav = useNavigate()
 
 
     useEffect(() => {
@@ -71,7 +73,10 @@ const HeaderApplication = ({setToggleApplication}) => {
                         Ваша заявка была принята ожидайте, скоро Вам перезвонят
                     </div>
 
-                        <button onClick={() => setToggleApplication(false)} style={{background:  "#1D1D1B"}} className="num-application-btn">Продолжить покупки</button>
+                        <button onClick={() => {
+                            setToggleApplication(false)
+                            nav("/")
+                        }} style={{background:  "#1D1D1B"}} className="num-application-btn">Продолжить покупки</button>
                         
                     </div>
 

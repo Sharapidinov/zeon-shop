@@ -299,7 +299,7 @@ header {
     align-items: center;
     padding: 14px 20px 13px;
     gap: 10px;
-    width: 360px;
+    width: 100%;
     height: 44px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #1D1D1B;
     flex: none;
@@ -421,6 +421,13 @@ header {
     align-items: center;
     text-align: center;
     margin-bottom: 44px;
+}
+.show-more-btn button{
+    padding: 8px 38px;
+    gap: 8px;
+    background: #1D1D1B;
+    color: #FFFFFF;
+    border: none;
 }
 
 .product-img{
@@ -648,6 +655,15 @@ header {
 
 
 }
+.help-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    color: #393939;
+    margin-bottom: 15px;
+}
 
 .accordion-title{
     display: flex;
@@ -663,6 +679,7 @@ header {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    font-style: normal;
 }
 .accordion-title:hover{
 
@@ -1029,6 +1046,38 @@ header {
     margin-bottom: 12px;
 
 }
+.cart-application-box div input:active{
+    border: none !important;
+}
+
+div.cart-application-box-checkbox{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-direction: unset;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+div.cart-application-box-checkbox label{
+    color: #393939;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    margin: 0;
+}
+input#agree{
+    width: 18px;
+    height: 18px;
+    background: #393939;
+    color: #393939;
+    margin: 0 11px 0 0;
+    accent-color: #393939;
+}
+.cart-application-box-checkbox label a{
+    margin-left: 5px;
+    text-decoration: none;
+}
+
 .PhoneInputCountry{
     position: absolute;
     top: 45%;
@@ -1042,11 +1091,26 @@ header {
 
 }
 
-
-
-
-
-
+.public-offer{
+    padding: 11px 0 50px;
+}
+.public-offer-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 34px;
+}
+.public-offer-text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 165%;
+    color: #5B5B5B;
+    background: white;
+    padding: 16px;
+}
+div.PhoneInputCountrySelectArrow {
+    display: none;
+}
 
 
 
@@ -1091,10 +1155,6 @@ footer{
     margin-top: 35px;
 }
 .product-info-box-btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 12px 30px 12px 18px;
     gap: 10px;
     width: 428px;
@@ -1102,6 +1162,7 @@ footer{
     color: white;
     background: #1D1D1B;
     margin-right: 10px;
+    border: none;
 }
 .product-info-box-btn-img{
     background:  white;
@@ -1111,6 +1172,10 @@ footer{
 }
 .product-btn-bag{
     color: white;
+    padding: 10px;
+    gap: 10px;
+    border: none;
+    background: #1D1D1B;
 }
 
 

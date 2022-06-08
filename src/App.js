@@ -12,6 +12,7 @@ import Cart from "./pages/cart/Cart";
 import Collection from "./pages/collection/Collection";
 import ColectionS from "./pages/ColectionS/ColectionS";
 import ModalMenue from "./components/ModalMenue/ModalMenue";
+import PublicOffer from "./pages/PublicOffer/PublicOffer";
 
 
 
@@ -33,6 +34,7 @@ function App() {
             <Route path={"/cart"} element={<Cart/>}/>
             <Route path={"/collection"} element={<Collection/>}/>
             <Route path={"/collection/:name/:id"} element={<ColectionS/>}/>
+            <Route path={"/PublicOffer"} element={<PublicOffer/>}/>
            </Routes>
             <Footer/>
                 <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />

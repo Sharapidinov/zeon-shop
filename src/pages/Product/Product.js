@@ -187,13 +187,13 @@ const Product = () => {
                         <div className="product-btn">
                             {
                                 toggleBnt ?
-                                    <button onClick={() => nav("/cart") } className="btn product-info-box-btn btn-dark">Перейти в корзину</button>
+                                    <button onClick={() => nav("/cart") } className=" product-info-box-btn">Перейти в корзину</button>
                                     : <button onClick={() => addToCart(item)}
-                                              className="btn product-info-box-btn btn-dark"><img src={bag}
+                                              className="product-info-box-btn"><img src={bag}
                                                                                                  alt=""/> Добавить в
                                         корзину</button>
                             }
-                            <button onClick={() => addToSelect(item)} className="btn product-btn-bag btn-dark"><img
+                            <button onClick={() => addToSelect(item)} className="product-btn-bag "><img
                                 src={!!add ? fullheart : heart} alt=""/></button>
                         </div>
 

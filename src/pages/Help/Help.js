@@ -30,6 +30,9 @@ const Help = () => {
                         <img src={help?.image} alt=""/>
                     </div>
                      <div className="">
+                         <div className="help-title">
+                             Помощь
+                         </div>
                             <div className="accordion-box">
                                 {
                                     help?.questions?.map((it,idx) => {

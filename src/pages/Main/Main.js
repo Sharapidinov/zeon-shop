@@ -62,7 +62,7 @@ const Main = () => {
                         })}
                     </div>
                     <div className="show-more-btn">
-                        { +bestLim <= 4 ? <button onClick={() => setBestLim(bestLim + 4)} className="btn btn-dark">Еще</button> : <></>   }
+                        { +bestLim <= 4 ? <button onClick={() => setBestLim(bestLim + 4)}>Еще</button> : <></>   }
                     </div>
                 </div>
                 <div className="new">
@@ -82,7 +82,7 @@ const Main = () => {
                         })}
                     </div>
                     <div className="show-more-btn">
-                        { +newLim <= 4 ? <button onClick={() => setNewLim(newLim + 4)} className="btn btn-dark">Еще</button> : <></>   }
+                        { +newLim <= 4 ? <button onClick={() => setNewLim(newLim + 4)} >Еще</button> : <></>   }
                     </div>
                 </div>
             </div>}
@@ -104,7 +104,7 @@ const Main = () => {
                        }
                    </div>
                    <div className="show-more-btn">
-                       { +colLim <= 4 ? <button onClick={() => setColLim(colLim + 4)} className="btn btn-dark">Еще</button> : <></>   }
+                       { +colLim <= 4 ? <button onClick={() => setColLim(colLim + 4)}>Еще</button> : <></>   }
                    </div>
                </div>
             </div>
