@@ -7,7 +7,8 @@ import HC from "../../icons/heartWithCircle.svg"
 import bag from "../../icons/shopping-bagBlack.svg"
 import fullBag from "../../icons/shopping-bagCircle.svg"
 import HeaderApplication from "../HeaderAplication/HeaderApplication";
-import {logDOM} from "@testing-library/react";
+import {useNavigate} from "react-router";
+import searchIcon from "../../icons/zondicons_search.svg"
 
 
 const Header = ({toggleApplication, setToggleApplication}) => {
@@ -17,8 +18,11 @@ const Header = ({toggleApplication, setToggleApplication}) => {
     const {selected, cart} = useSelector(s => s)
     const [res, setRes] = useState([])
     const [searchRes, setSearchRes] = useState([])
+    const [searchStr, setSearchStr] = useState("")
     const [toggleSearch, setToggleSearch] = useState(false)
+    const nav = useNavigate()
 
+    useEffect(() => {},[cart, selected])
 
 
     useEffect(() => {
@@ -40,14 +44,19 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
 
     const search = (str) => {
-        // console.log(res)
-        console.log( res.filter(it => it.title.toLowerCase().includes(str.toLowerCase())))
         setSearchRes( res.filter(it => it.title.toLowerCase().includes(str.toLowerCase())) || [])
-        // console.log(res.filter(it => it.title.toLowerCase().includes(str.toLowerCase())))
+        setSearchStr(str)
+        setToggleSearch(true)
+    }
+    const toggleNav = (e) => {
+        if (e.code === "Enter"){
+            nav("/search", {state: {searchRes, searchStr}})
+        }
     }
 
     return (
         <header id="header">
+            <div className="header-line"></div>
             <div className="container">
                 <div>
 
@@ -60,8 +69,8 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                         </div>
 
 
-                        <div onClick={() => setToggleApplication(!toggleApplication)} className="header-tel">
-                            <span> Тел:</span> {info?.tel}
+                        <div className="header-tel">
+                            <a className="header-tel-link" href={`tel:${info?.tel}`}><span> Тел:</span> {info?.tel}</a>
                         </div>
                     </div>
                 </div>
@@ -75,22 +84,37 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
                         <div className="search">
 
-                            <input onChange={e => search(e.target.value)} onClick={() => setToggleSearch(true)} className="header-search" type="text"/>
+                            <input onKeyDown={ e => toggleNav(e)}
+                                   onBlur={ () => {
+                                       setTimeout(() => {
+                                           setSearchRes([])
+                                           setToggleSearch(false)
+                                       }, 300)
 
-                            <div className="search-res-box">
-                                {
-                                    toggleSearch &&
-                                    searchRes?.map(it => {
-                                        console.log(it)
-                                        return (
+                                   } }
+                                   placeholder="Поиск"
+                                   onChange={e => search(e.target.value)}
+                                   className="header-search" type="text"/>
+                            <button onClick={ () => nav("/search", {state: {searchRes, searchStr}}) }  className="search-icon" ><img src={searchIcon} alt=""/></button>
+                            { toggleSearch &&
+                                <div className="search-res-box">
+                                <div className="search-items">
+                                    {
+                                        searchRes?.map(it => {
+                                            console.log(it)
+                                            return (
 
-                                            <Link to={it.id < 8 ?`bestsellers/${it.id}`: `new/${it.id}` }><div key={it.id + it.count + it.title} className="search-res">
-                                                {it.title}
-                                            </div></Link>
-                                        )
-                                    })
-                                }
-                            </div>
+                                                <Link to={it.id < 8 ? `bestsellers/${it.id}` : `new/${it.id}`}>
+                                                    <div key={it.id + it.count + it.title} className="search-res">
+                                                        {it.title}
+                                                    </div>
+                                                </Link>
+                                            )
+                                        })
+                                    }
+                                </div>
+
+                            </div>}
 
                         </div>
 
@@ -99,7 +123,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
                             <div className="selected me-5"><Link to="/selected"> <img className="me-3"
                                                                                       src={!!sel?.length ? HC : heart}
-                                                                                      alt=""/> Избраное </Link></div>
+                                                                                      alt=""/> Избранное </Link></div>
                             <div className="selected "><Link to="/cart"> <img className="me-3"
                                                                               src={!!getCart?.length ? fullBag : bag}
                                                                               alt=""/> Корзина</Link></div>
@@ -107,7 +131,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                         </div>
 
                     </div>
-
+                    <div className="line"></div>
                 </div>
             </div>
             {

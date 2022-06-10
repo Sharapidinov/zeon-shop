@@ -4,6 +4,20 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #EEEEEE;;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #979797;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +25,10 @@ input::-webkit-inner-spin-button {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
 }
-
+*a{
+    text-decoration: none;
+    color: white;
+}
 
 
 
@@ -35,6 +52,7 @@ main{
 }
 .container{
     max-width: 1166px;
+    padding: 0;
     margin: 0 auto;
 }
 .modal-menu{
@@ -71,20 +89,38 @@ main{
 .row{
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 .col-66{
     width: 66.666%;
+    padding: 0;
+    margin: 0;
 }
 .col-3{
     width: 25%;
-    padding: 4px 4px;
+    padding: 4px;
+
 }
 .col-5{
     width: 20%;
-
+    padding: 5px;
+    min-height: 540px;
 }
 header {
     background: white;
+}
+.breadcrumb-box{
+    background: #FFFFFF;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 11px;
+}
+.col-6{
+    width: 50%;
+    padding: 4px;
 }
 .header-links{
     display: flex;
@@ -160,13 +196,20 @@ header {
     align-items: center;
     text-align: center;
 }
-.header-tel{
+.header-tel *{
     cursor: pointer;
     font-weight: 400;
     font-size: 17px;
     line-height: 21px;
     text-align: right;
     color: #393939;
+    text-decoration: none;
+}
+a.header-tel-link{
+    text-decoration: none;
+}
+a.header-tel-link:hover{
+    color:  #393939;
 }
 .header-tel span{
     font-weight: 400;
@@ -183,17 +226,35 @@ header {
     display: flex;
     align-items: center;
     color: #858F9B;
-    margin-right: 35px;
-    width: 80%;
+    width: 90%;
     height: 40px;
+    margin-right: 10px;
+    z-index: 5;
+    border: 1px solid #E0E0E0;
+    background: #F8F8F8;
+
 }
 .header-content{
     padding: 12px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #EEEEEE;
-    border-top: 1px solid #EEEEEE;
+}
+
+.header-line{
+    width: 100%;
+    height: 1px;
+    background: #EEEEEE;
+    position: absolute;
+    top: 70px;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background: #EEEEEE;
+    position: absolute;
+    top: 166px;
+    left: 0;
 }
 .header-content-btn{
     align-items: center;
@@ -206,28 +267,61 @@ header {
     align-items: center;
     position: relative;
 }
+.search-icon{
+    position: absolute;
+    top: 8px;
+    z-index: 5;
+    right: 50px;
+    background: none;
+    border: none;
+}
 
 .search-res-box{
     position: absolute;
-    top: 100%;
+    top: calc(100% - 40px);
     overflow: auto;
-    z-index: 4;
+    z-index: 2;
     background: white;
     max-height: 300px;
     width: 100%;
+    padding: 50px 20px 0;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
 
-
+}
+.search-items{
+    z-index: 2;
+    text-align: start;
 }
 .search-res{
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
     display: flex;
-    align-items: center;
     color: #1D1D1B;
     background: #FFFFFF;
-    padding: 20px 16px;
-    border: 1px solid black;
+    padding: 20px 0;
+    border-bottom: 1px solid #EEEEEE;
+    flex-direction: column;
+    text-align: start;
+}
+.search-items a{
+    text-decoration: none;
+}
+.search-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #393939;
+    margin-bottom: 16px;
+    margin-top: 11px;
+}
+.pagination-btn{
+    padding: 10px 18px;
+    border: none;
+    background: #1D1D1B;
+    margin: 10px;
+    color: white;
 }
 
 .num-application{
@@ -334,12 +428,21 @@ header {
     margin: 0 auto;
 }
 .slick-dots li button:before{
-    width: 8px;
+    width: 10px;
     margin-right: 0;
+    font-weight: bolder;
+    font-size: xx-small;
+    background: none;
+
 }
-.slick-dots li button{
-    width: 8px;
+
+
+
+
+.slick-dots li button *{
+    width: 10px;
     margin-right: 0;
+    font-weight: bolder;
 }
 .slick-dots li{
     width: 8px;
@@ -367,9 +470,8 @@ header {
     position: relative;
 }
 .product-card-img{
-
     width: 100%;
-    height: 80%;
+    max-height: 420px;
 }
 .heart-btn{
     position: absolute;
@@ -378,6 +480,14 @@ header {
     background: none;
     border: none;
     z-index: 5;
+}
+.move-block{
+    position: absolute;
+    width: 63px;
+    height: 3px;
+    background: #FFFFFF;
+    top: 410px;
+
 }
 .product-card-title{
     font-weight: 400;
@@ -505,7 +615,7 @@ header {
     font-size: 14px;
     line-height: 17px;
     color: #1D1D1B;
-    margin-bottom: 15px;
+
     display: flex;
 
 }
@@ -520,7 +630,7 @@ header {
     font-size: 14px;
     line-height: 17px;
     color: #1D1D1B;
-    margin-bottom: 15px;
+
     display: flex;
 
 }
@@ -535,7 +645,7 @@ header {
     font-size: 14px;
     line-height: 17px;
     color: #1D1D1B;
-    margin-bottom: 15px;
+
     display: flex;
 
 }
@@ -550,9 +660,9 @@ header {
     font-size: 14px;
     line-height: 17px;
     color: #1D1D1B;
-    margin-bottom: 15px;
-    display: flex;
 
+    display: flex;
+    margin-bottom: 10px;
 }
 .product-info-box-material p{
     font-weight: 400;
@@ -561,9 +671,7 @@ header {
     margin-left: 8px;
 }
 
-.about-us{
-    padding: 20px;
-}
+
 
 .about-us-title{
     font-weight: 500;
@@ -585,9 +693,7 @@ header {
     background: white;
     padding: 12px 24px;
 }
-.news{
-    padding: 9px;
-}
+
 .news-title{
     font-weight: 500;
     font-size: 24px;
@@ -633,7 +739,7 @@ header {
 }
 
 .help{
-    padding: 11px 0 75px;
+    padding: 0 0 75px;
 }
 .help-flex{
     display: flex;
@@ -859,18 +965,17 @@ header {
     margin-top: 24px;
 }
 .price-card-btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 14px 90px 13px;
     gap: 10px;
-    /*width: 336px;*/
-    /*height: 44px;*/
     background: #E5271B;
     margin: 0 auto;
     border: none;
     color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    line-height: 17px;
 }
 
 
@@ -921,15 +1026,19 @@ header {
     color: black;
 }
 
-.collection{
-    padding: 40px 0;
-}
+
 .collection-title{
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
     color: #393939;
+}
+.col-btn{
+    margin-bottom: 110px;
+    align-items: flex-end;
+    display: flex;
+    justify-content: end;
 }
 .our_advantages{
     padding-bottom: 64px;
@@ -973,7 +1082,8 @@ header {
 }
 .discount-num{
     transform: rotate(-45deg);
-    top: 5px;
+    top: 8px;
+    left: 5px;
     position: absolute;
     color: white;
     font-weight: 500;
@@ -1080,19 +1190,23 @@ input#agree{
 
 .PhoneInputCountry{
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 15px;
     width: 30px;
 }
 .phone-inp input{
     padding: 13px 10px 13px 45px !important;
 }
-.posit{
-
+div.PhoneInputCountryIcon--border{
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
-
+div.PhoneInputCountryIcon--border img{
+    border-radius: 4px;
+}
 .public-offer{
-    padding: 11px 0 50px;
+    padding: 0 0 50px;
 }
 .public-offer-title{
     font-weight: 500;

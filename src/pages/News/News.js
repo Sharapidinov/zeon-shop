@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import axios from "axios";
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
 
 const News = () => {
     const [news, setNews] = useState([])
@@ -37,6 +38,10 @@ const News = () => {
 
     return (
         <section className="news">
+
+            <BreadCrums name={"Новости"}/>
+
+
             <div className="container">
                 <div className="news-title">
                     Новости

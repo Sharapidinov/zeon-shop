@@ -1,8 +1,20 @@
 import React from 'react';
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
+import {Link} from "react-router-dom";
 
 const PublicOffer = () => {
     return (
         <section className="public-offer">
+            <div className="breadcrumb-box">
+                <div className="container">
+                    <div className="breadcrumb align-items-center mb-0">
+                        <p className="breadcrumb-item mb-0"><Link className="text-decoration-none" style={{color:"#393939"}} to={"/"}>Главная</Link></p>
+                        <p className="breadcrumb-item mb-0"><Link className="text-decoration-none" style={{color:"#393939"}} to={"/cart"}>Корзина</Link></p>
+                        <p className="breadcrumb-item active mb-0" >Публичная оферта</p>
+                    </div>
+                </div>
+
+            </div>
             <div className="container">
                 <div className="public-offer-title">
                     Публичная оферта

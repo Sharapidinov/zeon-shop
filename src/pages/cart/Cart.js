@@ -4,6 +4,7 @@ import xxx from "../../icons/XXX.svg"
 import ProductCard from "../../components/ProductCard/productCard";
 import axios from "axios";
 import CartApplication from "../../components/CartApplication/CartApplication";
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
 
 const Cart = () => {
     const [cartProducts, setCartProducts] = useState([])
@@ -68,11 +69,12 @@ const Cart = () => {
 
     }
 
-    console.log(cartProducts)
+
     return (
-        <section className="cart p-4">
+        <section className="cart">
+            <BreadCrums name={"Корзина"}/>
             <div className="container">
-                {cartProducts && cartProducts.length >= 1
+                {cartProducts && cartProducts?.length >= 1
                 ?<div className="row">
                         <div className="col-66">
                             {cartProducts?.map(it => {
@@ -116,22 +118,22 @@ const Cart = () => {
                                 <div className="price-card-num">
                                     <p>Количество линеек:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it, idx) => {
                                     return +(acc + +it?.count)
-                                }, 0)} шт</p>
+                                }, 0).toLocaleString()} шт</p>
                                 </div>
                                 <div className="price-card-num">
                                     <p>Количество товаров:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
                                     return +(acc +it?.count * +it.amount)
-                                }, 0)} шт</p>
+                                }, 0).toLocaleString()} шт</p>
                                 </div>
                                 <div className="price-card-num">
                                     <p>Стоимость:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                    return +(acc  +(+it?.price * it.count) * it.amount )
-                                },0)} рублей</p>
+                                    return +(acc  +(+it?.price * it.count)  )
+                                },0).toLocaleString()} рублей</p>
                                 </div>
                                 <div className="price-card-num">
                                     <p>Скидка:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                    return +(acc + it?.amount * it.count *  Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))) )
-                                }, 0)} рублей</p>
+                                    return +(acc + it.count *  Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))) )
+                                }, 0).toLocaleString()} рублей</p>
                                 </div>
 
 
@@ -140,8 +142,8 @@ const Cart = () => {
 
                                     <div className="price-card-num">
                                         <p>Итого к оплате:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                        return +(acc + (+it?.price * it.count) * it.amount) -  it.count * Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount) * it?.amount))
-                                    }, 0)} рублей</p>
+                                        return +(acc + (+it?.price * it.count) -  it.count * Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))))
+                                    }, 0).toLocaleString()} рублей</p>
                                     </div>
 
 

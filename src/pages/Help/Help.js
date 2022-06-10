@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import up from "../../icons/arrow-up.svg"
 import down from "../../icons/arrow-down.svg"
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
 
 const Help = () => {
     const [help, setHelp] = useState({})
@@ -24,6 +25,7 @@ const Help = () => {
 
     return (
         <section className="help">
+            <BreadCrums name={"Помощь"}/>
             <div className="container">
                 <div className="help-flex">
                     <div className="help-img">

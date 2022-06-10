@@ -1,16 +1,18 @@
 import React from 'react';
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
 
 const AboutUs = () => {
 
 
     return (
         <section className="about-us">
+            <BreadCrums name={"О нас"}/>
             <div className="container">
                 <div className="row">
                     <div className="col-6  ">
                         <div className="d-flex justify-content-end alight-items-end">
                             <div className="col-7">
-                                <div className="rol-6">
+                                <div className="rol-6 mb-3">
                                     <img
                                         src="https://cdn.discordapp.com/attachments/978515025473966083/979333461917708318/unknown.png"
                                         alt=""/>

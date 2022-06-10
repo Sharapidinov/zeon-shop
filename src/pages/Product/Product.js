@@ -6,11 +6,13 @@ import heart from "../../icons/heart.svg"
 import fullheart from "../../icons/full-heart-forparoduct.svg"
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router"
+import ProductCard from "../../components/ProductCard/productCard";
 
 const Product = () => {
     const [item, setItem] = useState()
     const [toggleColor, setToggleColor] = useState(item?.color[0] || "#73A39D")
     const [toggleBnt, setToggleBtn] = useState(false)
+    const [randomCard, setRandomCard] = useState([])
     const {name, id} = useParams()
     const dispatch = useDispatch()
     const nav = useNavigate()
@@ -33,6 +35,8 @@ const Product = () => {
                 .then(({data}) => setItem(data))
         }
 
+        axios(`http://localhost:3000/bestsellers?&_limit=2`).then(({data}) => setRandomCard(data))
+        axios(`http://localhost:3000/new?&_limit=3`).then(({data}) => setRandomCard(prevState => [...prevState, ...data]))
 
         console.log(findCart?.color)
     }, [name, toggleColor, dispatch, toggleBnt])
@@ -87,44 +91,42 @@ const Product = () => {
 
     return (
         <div className="container">
-            <div className="row">
+            <div className="row mb-5">
                 <div className="col-6">
                     <div className="row">
                         <div className="col-6">
-                            <div className="pt-2">
+                            <div>
                                 <img className="product-img" src={item?.image} alt=""/>
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="pt-2">
+                            <div>
                                 <img className="product-img" src={item?.image} alt=""/>
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="pt-2">
+                            <div className="">
                                 <img className="product-img" src={item?.image} alt=""/>
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="pt-2">
+                            <div>
                                 <img className="product-img" src={item?.image} alt=""/>
                             </div>
                         </div>
 
-                        <div className="col-3 pt-2">
+                        <div className="col-3">
                             <img className="product-img" src={item?.image} alt=""/>
                         </div>
-                        <div className="col-3 pt-2">
+                        <div className="col-3">
                             <img className="product-img" src={item?.image} alt=""/>
                         </div>
-                        <div className="col-3 pt-2">
+                        <div className="col-3">
                             <img className="product-img" src={item?.image} alt=""/>
                         </div>
-                        <div className="col-3 pt-2">
+                        <div className="col-3">
                             <img className="product-img" src={item?.image} alt=""/>
                         </div>
-
-
                     </div>
                 </div>
                 <div className="col-6">
@@ -199,6 +201,20 @@ const Product = () => {
 
                     </div>
                 </div>
+            </div>
+
+            <div className="interesting">
+                <div className="interesting-title">Похожие товары</div>
+                <div className="row">
+                    {randomCard?.map(it => {
+                        return (
+                            <div key={it.id + it?.color[0]} className="col-5">
+                                <ProductCard  it={it} toggle={!it.selected} name={it.id > 8 ?"new" :"bestsellers"}/>
+                            </div>
+                        )
+                    })}
+                </div>
+
             </div>
         </div>
     );

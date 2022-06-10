@@ -42,8 +42,8 @@ const Footer = () => {
                     <div className="footer-title">
                         Контакты
                     </div>
-                    <p><a href={`tel:+996700123456`}><img className="me-1"  src={tel} alt="tel icon"/> {info?.tel} </a></p>
-                    <p><a href="tel:+996706123456"><img className="me-1"  src={tel} alt="tel icon"/> {info?.tel} </a></p>
+                    <p><a href={`tel:${info?.tel}`}><img className="me-1"  src={tel} alt="tel icon"/> {info?.tel} </a></p>
+                    <p><a href={`tel:${info?.tel}`}><img className="me-1"  src={tel} alt="tel icon"/> {info?.tel} </a></p>
                     <p><a href={`mailto:${info?.email}`}><img  className="me-1" src={email} alt="email icon"/> {info?.email} </a></p>
                 </div>
             </div>

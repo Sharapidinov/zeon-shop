@@ -7,6 +7,7 @@ import axios from "axios";
 import check from "../../icons/check.svg";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 const CartApplication = ({setToggleApplication, cartProducts}) => {
     const [toggle, setToggle] = useState(false)
@@ -15,9 +16,14 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
         mode:"all"
     })
     const nav = useNavigate()
+    const dispatch = useDispatch()
+
+
     useEffect(() => {}, [errors])
 
     console.log(errors)
+
+
     const sendApplication = (data) => {
         const product = {...data, products: [...cartProducts], finalPayment: `${cartProducts?.reduce((acc, it) => {
                 return +(acc + (+it?.price * it.count) * it.amount) -  it.count * Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount) * it?.amount))
@@ -32,15 +38,6 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
             setToggle(true)
         }).catch(e => alert(e?.response?.data?.message || "Error"))
     }
-
-
-
-
-
-
-
-
-
 
 
     return (
@@ -59,6 +56,8 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
 
                     <button onClick={() => {
                         setToggleApplication(false)
+                        localStorage.removeItem("cart")
+                        dispatch({type: "UPDATE_CART", cart:[]})
                         nav("/")
                     }
                     } style={{background:  "#1D1D1B"}} className="num-application-btn">Продолжить покупки</button>
@@ -106,6 +105,7 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
                                 defaultCountry="KG"
                                 placeholder="Введите номер телефона"
                                 id="telNum"
+
                                 className={errors?.telNum && "border-danger" }
                             />
                         </div>

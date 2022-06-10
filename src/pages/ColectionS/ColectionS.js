@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import ProductCard from "../../components/ProductCard/productCard";
 
 const ColectionS = () => {
@@ -17,9 +17,21 @@ const ColectionS = () => {
 
     return (
         <section className="collection">
+
+            <div className="breadcrumb-box">
+                <div className="container">
+                    <div className="breadcrumb align-items-center mb-0">
+                        <p className="breadcrumb-item mb-0"><Link className="text-decoration-none" style={{color:"#393939"}} to={"/"}>Главная</Link></p>
+                        <p className="breadcrumb-item mb-0"><Link className="text-decoration-none" style={{color:"#393939"}} to={"/collection"}>Коллекции</Link></p>
+                        <p className="breadcrumb-item active mb-0" >{col?.title}</p>
+                    </div>
+                </div>
+
+            </div>
+
             <div className="container">
                 <div className="collection-title">
-                    Колекция {col?.title}
+                    Коллекция {col?.title}
                 </div>
 
                 <div className="row">

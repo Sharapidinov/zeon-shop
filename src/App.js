@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Route, Routes} from "react-router-dom"
+import React, {useEffect, useState} from "react";
+import {Route, Routes, useLocation} from "react-router-dom"
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Main from "./pages/Main/Main";
@@ -13,11 +13,17 @@ import Collection from "./pages/collection/Collection";
 import ColectionS from "./pages/ColectionS/ColectionS";
 import ModalMenue from "./components/ModalMenue/ModalMenue";
 import PublicOffer from "./pages/PublicOffer/PublicOffer";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import BreadCrums from "./components/Breadcrums/BreadCrums";
 
 
 
 function App() {
     const [toggleApplication, setToggleApplication] = useState(false)
+    const {pathname} = useLocation()
+    useEffect(() => {
+            window.scrollTo(0, 0)
+    }, [pathname])
 
 
 
@@ -35,6 +41,7 @@ function App() {
             <Route path={"/collection"} element={<Collection/>}/>
             <Route path={"/collection/:name/:id"} element={<ColectionS/>}/>
             <Route path={"/PublicOffer"} element={<PublicOffer/>}/>
+            <Route path={"/search"} element={<SearchPage/>}/>
            </Routes>
             <Footer/>
                 <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />

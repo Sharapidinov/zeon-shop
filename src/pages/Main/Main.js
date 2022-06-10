@@ -5,6 +5,7 @@ import axios from "axios";
 import ProductCard from "../../components/ProductCard/productCard";
 import {useNavigate} from "react-router";
 import CollectionCard from "../../components/CollectionCard/CollectionCard";
+import BreadCrums from "../../components/Breadcrums/BreadCrums";
 
 
 
@@ -12,7 +13,7 @@ const Main = () => {
 
     const dispatch = useDispatch()
     const [advant, setAdvant] = useState([])
-    const {products, newProduct, collection} = useSelector((store) => store)
+    const {products, newProduct, collection, cart} = useSelector((store) => store)
     const [bestLim, setBestLim] = useState(4)
     const [newLim, setNewLim] = useState(4)
     const [colLim, setColLim] = useState(4)
@@ -35,7 +36,8 @@ const Main = () => {
             .then(({data}) => {
                 setAdvant(data)
             })
-    }, [newLim, bestLim, colLim])
+    }, [newLim, bestLim, colLim, cart])
+
 
 
     return (
