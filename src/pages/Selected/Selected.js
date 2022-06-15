@@ -28,7 +28,7 @@ const Selected = () => {
         }
         setIsLoading(false)
 
-    }, [sel,isLoading,selector?.length])
+    }, [sel,selector?.length])
     //
     // useEffect(() => {
     //     document.addEventListener("scroll", scrollHendler)

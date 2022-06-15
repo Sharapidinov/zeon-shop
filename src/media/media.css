@@ -1,0 +1,234 @@
+@media (max-width: 1200px){
+    .container{
+        max-width: 980px;
+        padding: 0 10px;
+    }
+    .about-us-felx-box{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .col-6  {
+        width: 50%;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .about-us{
+        padding-bottom: 20px;
+    }
+    /*.detail-img-flex-box{*/
+    /*    overflow-x: auto;*/
+    /*    display: flex;*/
+    /*    flex-wrap: unset;*/
+    /*}*/
+    /*.detail-img-flex-box::-webkit-scrollbar {*/
+    /*    width: 0;*/
+    /*    height: 0;*/
+    /*}*/
+    .detail-img{
+        width: 50%;
+    }
+}
+@media (max-width: 992px){
+    .container{
+        max-width: unset;
+        padding: 0 50px;
+    }
+    .col-3{
+        width: 50%;
+    }
+    .col-7{
+        width: unset;
+    }
+    .col-5{
+        width: 50%;
+    }
+    .col-66{
+        width: 100%;
+    }
+    .footer-flex-box{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-flex-box{
+        display: block;
+        position: relative;
+    }
+    .footer-flex-box div{
+        margin-bottom: 24px;
+    }
+    .footer-flex-box:last-child{
+        margin-bottom: 60px;
+        border-bottom: 1px solid #363635;
+        padding-bottom: 20px;
+    }
+    .footer-text{
+        position: absolute;
+        bottom: -65px;
+        left: 3em;
+    }
+    .slider-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 500px;
+        /*max-height: 280px;*/
+    }
+    .slider-box img {
+        width: 100%;
+    }
+    .slick-track{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .news-block{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto 20px;
+        flex-direction: column;
+
+    }
+    .news-img{
+
+        margin-bottom: 10px;
+    }
+    .news-img img{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .news-content-title{
+        width: unset;
+    }
+    .cart{
+        position: relative;
+    }
+    .price-card{
+        margin-bottom: 30px;
+    }
+    .price-card-col{
+        width: 100%;
+        /*position: sticky;*/
+        /*bottom: 0;*/
+        /*right: 0;*/
+        /*left: 0;*/
+        /*align-self: stretch;*/
+    }
+}
+@media (max-width: 768px){
+    header{
+        border-bottom: 1px solid #EEEEEE;
+    }
+    .header-info {
+        display: none;
+    }
+    .header-content{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 25px;
+    }
+    .header-content-btn{
+        display: none;
+    }
+    .header-logo a img{
+        width: 99px;
+    }
+    .search input{
+        display: none;
+    }
+    .search{
+        top: 0;
+        width: unset;
+        margin: unset;
+    }
+    .search-icon{
+        position: unset;
+    }
+    .header-content-btn{
+        display: none !important;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .header-line{
+        display: none;
+    }
+    .line{
+        display: none;
+    }
+    .col-3 {
+
+    }
+    .modal-menu{
+        display: none;
+    }
+    .slider-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 500px;
+        max-height: 250px;
+        /*max-height: 280px;*/
+    }
+    .slider-box img {
+        width: 100%;
+        height: 250px;
+    }
+}
+@media (max-width: 576px){}
+@media (max-width: 480px){}
+@media (max-width: 320px) {
+
+    footer{
+        padding: 18px 24px;
+
+    }
+   .container{
+       padding: 15px;
+       width: unset;
+   }
+
+   .show-more-btn{
+       display: none;
+   }
+   .footer-flex-box{
+       display: block;
+       position: relative;
+   }
+   .footer-flex-box div{
+       margin-bottom: 24px;
+   }
+   .footer-flex-box:last-child{
+       margin-bottom: 60px;
+       border-bottom: 1px solid #363635;
+       padding-bottom: 20px;
+   }
+   .footer-text{
+       position: absolute;
+       bottom: -65px;
+       left: 16px;
+   }
+   div.footer-about-us-box{
+
+   }
+
+   .row {
+       overflow-x: auto;
+       display: flex;
+       flex-wrap: unset;
+   }
+   .row::-webkit-scrollbar {
+       width: 0;
+       height: 0;
+   }
+   .col-3   {
+       width: 100%;
+   }
+}

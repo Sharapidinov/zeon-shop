@@ -6,10 +6,11 @@ import ProductCard from "../../components/ProductCard/productCard";
 import {useNavigate} from "react-router";
 import CollectionCard from "../../components/CollectionCard/CollectionCard";
 import BreadCrums from "../../components/Breadcrums/BreadCrums";
+import ModalMenue from "../../components/ModalMenue/ModalMenue";
 
 
 
-const Main = () => {
+const Main = ({toggleApplication, setToggleApplication}) => {
 
     const dispatch = useDispatch()
     const [advant, setAdvant] = useState([])
@@ -44,6 +45,8 @@ const Main = () => {
 
 
         <main>
+
+
             {products.length && newProduct.length && <div className="container">
                 <div className="slider">
                     <SimpleSlider/>
@@ -118,7 +121,7 @@ const Main = () => {
                         Наши преимущества
                     </div>
 
-                    <div className="row">
+                    <div className="our_advantages-felx-box">
                         {
                             advant.map(it => {
                                 return (
@@ -135,6 +138,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+            <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />
         </main>
     );
 };

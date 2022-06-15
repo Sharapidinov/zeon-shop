@@ -94,12 +94,13 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
                             })} type="email" placeholder="example@mail.com" id="email"/>
                         </div>
                         <div className="phone-inp">
-                            <label className={errors?.telNum &&"text-danger"} htmlFor="telNum">Ваш номер телефона</label>
+                            <label className={numValue.length >3 &&"text-danger"} htmlFor="telNum">Ваш номер телефона</label>
                             <PhoneInput
                                 value={numValue}
                                 onChange={e => setNumValue(e.target.value)}
                                 {...register('telNum', {
                                     required: true,
+                                    minLength: 7
                                 })}
                                 international
                                 defaultCountry="KG"

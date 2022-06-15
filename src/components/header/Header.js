@@ -9,6 +9,7 @@ import fullBag from "../../icons/shopping-bagCircle.svg"
 import HeaderApplication from "../HeaderAplication/HeaderApplication";
 import {useNavigate} from "react-router";
 import searchIcon from "../../icons/zondicons_search.svg"
+import burger from "../../icons/burger-menu.svg"
 
 
 const Header = ({toggleApplication, setToggleApplication}) => {
@@ -78,7 +79,13 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
                 <div>
                     <div className="header-content d-flex">
-                        <div className="header-logo me-4">
+                        
+                        <div className="burger-menu">
+                            <img src={burger} alt=""/>
+                        </div>
+                        
+                        
+                        <div className="header-logo">
                             <Link to={"/"}><img src={info?.icons?.headericon} alt=""/></Link>
                         </div>
 
@@ -121,7 +128,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
                         <div className="header-content-btn d-flex">
 
-                            <div className="selected me-5"><Link to="/selected"> <img className="me-3"
+                            <div className="selected br"><Link to="/selected"> <img className="me-3"
                                                                                       src={!!sel?.length ? HC : heart}
                                                                                       alt=""/> Избранное </Link></div>
                             <div className="selected "><Link to="/cart"> <img className="me-3"

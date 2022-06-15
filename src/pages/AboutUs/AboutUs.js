@@ -8,7 +8,7 @@ const AboutUs = () => {
         <section className="about-us">
             <BreadCrums name={"О нас"}/>
             <div className="container">
-                <div className="row">
+                <div className="about-us-felx-box">
                     <div className="col-6  ">
                         <div className="d-flex justify-content-end alight-items-end">
                             <div className="col-7">

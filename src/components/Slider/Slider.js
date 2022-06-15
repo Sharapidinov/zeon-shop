@@ -16,7 +16,15 @@ export default class SimpleSlider extends Component {
             autoplay: true,
             slidesToScroll: 1,
             nextArrow: <></>,
-            prevArrow: <></>
+            prevArrow: <></>,
+            responsive: [{
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            }]
         };
 
         return (

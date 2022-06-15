@@ -91,9 +91,9 @@ const Product = () => {
 
     return (
         <div className="container">
-            <div className="row mb-5">
+            <div className="detail-flex-box mb-5">
                 <div className="col-6">
-                    <div className="row">
+                    <div className="detail-img-flex-box">
                         <div className="col-6">
                             <div>
                                 <img className="product-img" src={item?.image} alt=""/>
@@ -146,7 +146,7 @@ const Product = () => {
 
                                         return (
                                             <div onClick={() => checkColor(color)} className="colors"
-                                                 style={{backgroundColor: `${color}`}}></div>
+                                                 style={{backgroundColor: `${color}`,opacity: "0.6"}}></div>
                                         )
                                     })}
                             </div>

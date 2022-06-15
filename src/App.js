@@ -31,7 +31,7 @@ function App() {
         <div className="App">
             <Header toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />
            <Routes>
-            <Route path={"/"} element={<Main/>}/>
+            <Route path={"/"} element={<Main toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />}/>
             <Route path={":name/:id"} element={<Product/>}/>
             <Route path={"/about-us"} element={<AboutUs/>}/>
             <Route path={"/news"} element={<News/>}/>
@@ -44,7 +44,7 @@ function App() {
             <Route path={"/search"} element={<SearchPage/>}/>
            </Routes>
             <Footer/>
-                <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />
+
         </div>
     );
 }

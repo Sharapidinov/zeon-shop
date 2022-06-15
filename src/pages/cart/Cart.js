@@ -110,7 +110,7 @@ const Cart = () => {
                                 )
                             })}
                         </div>
-                        <div className="col-4">
+                        <div className="price-card-col">
                             <div className="price-card">
                                 <div className="price-card-title">
                                     Сумма заказов
@@ -118,7 +118,7 @@ const Cart = () => {
                                 <div className="price-card-num">
                                     <p>Количество линеек:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it, idx) => {
                                     return +(acc + +it?.count)
-                                }, 0).toLocaleString()} шт</p>
+                                }, 0).toLocaleString().split(`,`).join(" ")} шт</p>
                                 </div>
                                 <div className="price-card-num">
                                     <p>Количество товаров:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
@@ -128,12 +128,12 @@ const Cart = () => {
                                 <div className="price-card-num">
                                     <p>Стоимость:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
                                     return +(acc  +(+it?.price * it.count)  )
-                                },0).toLocaleString()} рублей</p>
+                                },0).toLocaleString().split(`,`).join(" ")} рублей</p>
                                 </div>
                                 <div className="price-card-num">
                                     <p>Скидка:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
                                     return +(acc + it.count *  Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))) )
-                                }, 0).toLocaleString()} рублей</p>
+                                }, 0).toLocaleString().split(`,`).join(" ")} рублей</p>
                                 </div>
 
 
@@ -143,7 +143,7 @@ const Cart = () => {
                                     <div className="price-card-num">
                                         <p>Итого к оплате:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
                                         return +(acc + (+it?.price * it.count) -  it.count * Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))))
-                                    }, 0).toLocaleString()} рублей</p>
+                                    }, 0).toLocaleString().split(`,`).join(" ")} рублей</p>
                                     </div>
 
 

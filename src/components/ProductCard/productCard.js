@@ -35,28 +35,23 @@ const ProductCard = ({name, it, toggle = false}) => {
         const cardWith = Math.ceil(clientWith / 4)
         // console.log(cardWith, mouseX)
         setMoveBlock(mouseX + 5)
-        console.log(moveBlock)
+        // console.log(moveBlock)
         setToggleHover(true)
 
         if (mouseX > 1 && cardWith > mouseX ){
-            console.log(1)
             setMoveBlock(45)
             setImg(it?.image)
         }
         if (mouseX > cardWith && cardWith * 2 > mouseX){
-            console.log(2)
             setImg("https://cdn.discordapp.com/attachments/978515025473966083/978593185792147456/Rectangle_491_4.png")
         }
         if (mouseX > cardWith * 2 && cardWith * 3 > mouseX ){
-            console.log(3)
             setImg("https://cdn.discordapp.com/attachments/978515025473966083/978593186136088576/Rectangle_491_3.png")
         }
         if (mouseX > cardWith * 3 && cardWith * 4  > mouseX ){
-            console.log(4)
             setImg("https://cdn.discordapp.com/attachments/978515025473966083/978593186463240232/Rectangle_491_2.png")
             setMoveBlock(210)
         }
-
     }
 
 
@@ -90,7 +85,7 @@ const ProductCard = ({name, it, toggle = false}) => {
                         <div className="d-flex">
                             {it?.color?.map(color => {
                                 return (
-                                    <div key={color} className="colors" style={{backgroundColor: `${color}`}}></div>
+                                    <div key={color} className="colors" style={{backgroundColor: `${color}` , opacity: "0.6"}}></div>
                                 )
                             })}
                         </div>
