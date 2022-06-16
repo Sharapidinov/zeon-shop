@@ -10,6 +10,10 @@ import HeaderApplication from "../HeaderAplication/HeaderApplication";
 import {useNavigate} from "react-router";
 import searchIcon from "../../icons/zondicons_search.svg"
 import burger from "../../icons/burger-menu.svg"
+import telegram from "../../icons/telegram.svg";
+import whats from "../../icons/whatsapp.svg";
+import telephone from "../../icons/telephone.svg";
+import xxx from "../../icons/XXX.svg";
 
 
 const Header = ({toggleApplication, setToggleApplication}) => {
@@ -21,6 +25,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
     const [searchRes, setSearchRes] = useState([])
     const [searchStr, setSearchStr] = useState("")
     const [toggleSearch, setToggleSearch] = useState(false)
+    const [toggleBurgerMenu, setToggleBurgerMenu] = useState(false)
     const nav = useNavigate()
 
     useEffect(() => {},[cart, selected])
@@ -80,7 +85,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                 <div>
                     <div className="header-content d-flex">
                         
-                        <div className="burger-menu">
+                        <div onClick={() => {setToggleBurgerMenu(!toggleBurgerMenu)}} className="burger-menu">
                             <img src={burger} alt=""/>
                         </div>
                         
@@ -144,6 +149,48 @@ const Header = ({toggleApplication, setToggleApplication}) => {
             {
                 toggleApplication && <HeaderApplication setToggleApplication={setToggleApplication}/>
             }
+            {toggleBurgerMenu && <div className="burger-menu-box">
+
+                <div>
+                    <img onClick={() => setToggleBurgerMenu(!toggleBurgerMenu)} className="close-burger-menu" src={xxx} alt=""/>
+                    <div className="burger-menu-title mb-3">Меню</div>
+                    <div className="header-links flex-column text-start align-items-start">
+                        <Link to="/about-us" className="mb-2">О нас</Link>
+                        <Link to="/collection" className="mb-2"> Коллекции</Link>
+                        <Link to="/news">Новости </Link>
+                    </div>
+                    <hr style={{opacity:"0.3"}}/>
+
+                    <div className="burger-content-btn">
+
+                        <div className="selected br mb-2"><Link to="/selected"> <img className="me-3 mb-2"
+                                                                                src={!!sel?.length ? HC : heart}
+                                                                                alt=""/> Избранное </Link></div>
+                        <div className="selected "><Link to="/cart"> <img className="me-3"
+                                                                          src={!!getCart?.length ? fullBag : bag}
+                                                                          alt=""/> Корзина</Link></div>
+
+                    </div>
+
+                </div>
+                <div>
+                    <p className="mb-2">Свяжитсь с нами:</p>
+
+                    <div className="header-tel mb-2">
+                        <a className="header-tel-link" href={`tel:${info?.tel}`}><span> Тел:</span> {info?.tel}</a>
+                    </div>
+
+                    <div>
+                        <a style={{fontSize:"0"}} target="_blank" href="https://telegram.org/"> <img className="menue-icons" src={telegram}
+                                                                              alt=""/></a>
+                        <a style={{fontSize:"0"}} target="_blank" href="https://www.whatsapp.com/"> <img className="menue-icons" src={whats}
+                                                                                  alt=""/></a>
+                        <a style={{fontSize:"0"}} > <img  onClick={() => setToggleApplication(!toggleApplication)} className="me-4" src={telephone}
+                                   alt=""/></a>
+                    </div>
+
+                </div>
+            </div>}
         </header>
     );
 };

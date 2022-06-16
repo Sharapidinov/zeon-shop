@@ -110,6 +110,9 @@ main{
     padding: 5px;
     min-height: 540px;
 }
+.burger-menu-box{
+    display: none;
+}
 .price-card-col{
     width: 33.333%;
 }
@@ -635,7 +638,7 @@ a.header-tel-link:hover{
     font-size: 14px;
     line-height: 180%;
     color: #6A6A6A;
-    width: 480px;
+    max-width: 480px;
     margin-bottom: 16px;
 }
 
@@ -710,6 +713,17 @@ a.header-tel-link:hover{
     align-items: flex-end;
 
 }
+.cart_details-show{
+    display: none;
+}
+
+.about-us-felx-text-box{
+    width: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .about-us-title{
     font-weight: 500;
@@ -777,6 +791,9 @@ a.header-tel-link:hover{
     line-height: 165%;
     color: #5B5B5B;
 
+}
+.news-content-disc-btn{
+    display: none;
 }
 
 .help{
@@ -984,6 +1001,10 @@ a.header-tel-link:hover{
     color: #393939;
     margin-bottom: 18px;
 }
+.price-card-num-box{
+    border-bottom: 1px dashed #BFBFBF;
+    margin-bottom: 24px;
+}
 
 .price-card-num{
     font-style: normal;
@@ -1000,11 +1021,11 @@ a.header-tel-link:hover{
 .price-card-num-black{
     color: #393939;
 }
-.price-card-total-price{
-    border-top:  1px dashed #BFBFBF ;
-    padding-top: 24px;
-    margin-top: 24px;
-}
+/*.price-card-total-price{*/
+/*    border-top:  1px dashed #BFBFBF ;*/
+/*    padding-top: 24px;*/
+/*    margin-top: 24px;*/
+/*}*/
 .price-card-btn{
     padding: 14px 90px 13px;
     gap: 10px;
@@ -1067,6 +1088,11 @@ a.header-tel-link:hover{
     color: black;
 }
 
+.collection-row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
 
 .collection-title{
     margin-bottom: 20px;

@@ -37,7 +37,7 @@ const Collection = () => {
                     Коллекции
                 </div>
 
-                <div className="row">
+                <div className="collection-row">
                     {
                         col.map(it => {
                             return (

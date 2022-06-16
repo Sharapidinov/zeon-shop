@@ -5,12 +5,18 @@ import ProductCard from "../../components/ProductCard/productCard";
 
 const ColectionS = () => {
     const [col, setCol] = useState([])
+    const [newProduct, setNewProduct] = useState([])
     const {id} = useParams()
     useEffect(() => {
         axios(`http://localhost:3000/collection?id=${id}`)
             .then(({data}) => {
                 setCol(data[0])
                 console.log(data)
+            })
+
+        axios(`http://localhost:3000/new?&_limit=5`)
+            .then(({data}) => {
+                setNewProduct(data)
             })
     },[])
 
@@ -34,7 +40,7 @@ const ColectionS = () => {
                     Коллекция {col?.title}
                 </div>
 
-                <div className="row">
+                <div className="collection-row mb-3">
                     {
                         col?.products?.map(it => {
                             return(
@@ -45,6 +51,23 @@ const ColectionS = () => {
                         })
                     }
                 </div>
+
+
+                <div className="collection-title">
+                    Новинки
+                </div>
+
+                <div className="row mb-3">
+
+                {newProduct?.map((it) => {
+                    return (
+                        <div key={it?.id} className="col-4 me-2">
+                            <ProductCard toggle={!it.selected} name={"new"} it={it}/>
+                        </div>
+                    )
+                })}
+            </div>
+
             </div>
         </section>
     );

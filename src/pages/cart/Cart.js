@@ -11,6 +11,7 @@ const Cart = () => {
     const [randomCard, setRandomCard] = useState([])
     const [toggleApplication, setToggleApplication] = useState(false)
     const dispatch = useDispatch()
+    const [isShow, setIsShow] = useState(false)
 
     const {cart} = useSelector(s => s)
 
@@ -112,30 +113,33 @@ const Cart = () => {
                         </div>
                         <div className="price-card-col">
                             <div className="price-card">
-                                <div className="price-card-title">
-                                    Сумма заказов
-                                </div>
-                                <div className="price-card-num">
-                                    <p>Количество линеек:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it, idx) => {
-                                    return +(acc + +it?.count)
-                                }, 0).toLocaleString().split(`,`).join(" ")} шт</p>
-                                </div>
-                                <div className="price-card-num">
-                                    <p>Количество товаров:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                    return +(acc +it?.count * +it.amount)
-                                }, 0).toLocaleString()} шт</p>
-                                </div>
-                                <div className="price-card-num">
-                                    <p>Стоимость:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                    return +(acc  +(+it?.price * it.count)  )
-                                },0).toLocaleString().split(`,`).join(" ")} рублей</p>
-                                </div>
-                                <div className="price-card-num">
-                                    <p>Скидка:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
-                                    return +(acc + it.count *  Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))) )
-                                }, 0).toLocaleString().split(`,`).join(" ")} рублей</p>
-                                </div>
-
+                                {!isShow && (
+                                    <div className="price-card-num-box">
+                                        <div className="price-card-title">
+                                            Сумма заказов
+                                        </div>
+                                        <div className="price-card-num">
+                                            <p>Количество линеек:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it, idx) => {
+                                            return +(acc + +it?.count)
+                                        }, 0).toLocaleString().split(`,`).join(" ")} шт</p>
+                                        </div>
+                                        <div className="price-card-num">
+                                            <p>Количество товаров:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
+                                            return +(acc +it?.count * +it.amount)
+                                        }, 0).toLocaleString()} шт</p>
+                                        </div>
+                                        <div className="price-card-num">
+                                            <p>Стоимость:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
+                                            return +(acc  +(+it?.price * it.count)  )
+                                        },0).toLocaleString().split(`,`).join(" ")} рублей</p>
+                                        </div>
+                                        <div className="price-card-num">
+                                            <p>Скидка:</p> <p className="price-card-num-black">{cartProducts?.reduce((acc, it) => {
+                                            return +(acc + it.count *  Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))) )
+                                        }, 0).toLocaleString().split(`,`).join(" ")} рублей</p>
+                                        </div>
+                                    </div>
+                                )}
 
                                 <div className="price-card-total-price">
 
@@ -145,7 +149,21 @@ const Cart = () => {
                                         return +(acc + (+it?.price * it.count) -  it.count * Math.ceil( it?.price - (it?.price - ( +it?.price / 100 * +it?.discount))))
                                     }, 0).toLocaleString().split(`,`).join(" ")} рублей</p>
                                     </div>
-
+                                    {isShow ? (
+                                        <button
+                                            className="cart_details-show mb-2"
+                                            onClick={() => setIsShow(false)}
+                                        >
+                                            Информация о заказе
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className="cart_details-show mb-2"
+                                            onClick={() => setIsShow(true)}
+                                        >
+                                            Скрыть
+                                        </button>
+                                    )}
 
                                     <button onClick={() => setToggleApplication(!toggleApplication)} className="price-card-btn" > Оформить заказ </button>
 

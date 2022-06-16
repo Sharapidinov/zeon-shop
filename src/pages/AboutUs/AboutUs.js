@@ -9,15 +9,15 @@ const AboutUs = () => {
             <BreadCrums name={"О нас"}/>
             <div className="container">
                 <div className="about-us-felx-box">
-                    <div className="col-6  ">
+                    <div className="col-6">
                         <div className="d-flex justify-content-end alight-items-end">
                             <div className="col-7">
-                                <div className="rol-6 mb-3">
+                                <div className="col-6 mb-3">
                                     <img
                                         src="https://cdn.discordapp.com/attachments/978515025473966083/979333461917708318/unknown.png"
                                         alt=""/>
                                 </div>
-                                <div className="rol-6">
+                                <div className="col-6">
                                     <img
                                         src="https://cdn.discordapp.com/attachments/978515025473966083/979333499066650644/unknown.png"
                                         alt=""/>
@@ -30,7 +30,7 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 d-flex align-items-end justify-content-center flex-column">
+                    <div className="col-6 about-us-felx-text-box d-flex align-items-end justify-content-center flex-column">
                        <div className="about-us-text-box">
                            <div className="about-us-title">
                                О нас

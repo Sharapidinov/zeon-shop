@@ -1,11 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
 import axios from "axios";
 import BreadCrums from "../../components/Breadcrums/BreadCrums";
+import DiscriptComponent from "../../components/DiscriptionComponent/DiscriptCOmponent.js";
 
 const News = () => {
     const [news, setNews] = useState([])
     const [page, setPage] = useState(1)
     const [isLoading, setIsLoading] = useState(true)
+
     const [totalCount, setTotalCount] = useState(0)
 
     useEffect(() => {
@@ -30,6 +32,13 @@ const News = () => {
     },[isLoading])
 
     const scrollHendler = (e) => {
+
+        if ((window.innerWidth) <= 570 )
+        {
+            if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 700 && news.length < totalCount){
+                setIsLoading(true)
+            }
+        }
         if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 250 && news.length < totalCount){
             setIsLoading(true)
         }
@@ -59,10 +68,8 @@ const News = () => {
                                 <div className="news-content-title">
                                     {it.title}
                                 </div>
-                                <div className="news-content-text">
-                                    {it.discription}
-                                </div>
-                            </div>
+                                <DiscriptComponent it={it} />
+                               </div>
 
                         </div>
                     )

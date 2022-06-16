@@ -120,8 +120,16 @@
         /*left: 0;*/
         /*align-self: stretch;*/
     }
+    .help-flex{
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .help-img{
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
 }
-@media (max-width: 768px){
+@media (max-width: 800px){
     header{
         border-bottom: 1px solid #EEEEEE;
     }
@@ -162,8 +170,17 @@
     .line{
         display: none;
     }
-    .col-3 {
-
+    .col-6 {
+        width: 100%;
+    }
+    .col-6 img{
+        width: 100%;
+    }
+    .col-7{
+        width: 50%;
+    }
+    .col-4 img{
+        width: 140%;
     }
     .modal-menu{
         display: none;
@@ -181,8 +198,144 @@
         width: 100%;
         height: 250px;
     }
+    .cart-application-box {
+        margin: 5em 0;
+        max-width: 465px;
+        overflow-y: auto;
+
+    }
+    .burger-menu-box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 5;
+        padding: 1.5em 1em;
+        z-index: 5;
+    }
+    .close-burger-menu{
+        position: absolute;
+        top: 1.8em;
+        left: 11.2em;
+    }
+    .about-us-felx-text-box{
+        width: 100%;
+    }
+    .detail-img-flex-box{
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: unset;
+        max-height: 400px;
+        max-width: 270px;
+    }
+    .detail-img-flex-box::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .detail-img-flex-box div.col-3{
+        width: 100%;
+    }
+    .product-info-box-btn img{
+        width: unset;
+    }
+    .price-card {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        margin-bottom: 0;
+        padding: 1em 3em;
+    }
+    .news-content{
+        max-width: 100%;
+    }
+    .cart_details-show{
+        display: block;
+        width: 100%;
+        padding: 1em;
+        margin: 1em auto 0;
+        background-color: white;
+        color: black;
+        font-weight: 100;
+
+        border: 1px solid #d1d1d170;
+    }
+    .price-card-total-price{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
 }
-@media (max-width: 576px){}
+@media (max-width: 576px){
+    .product-info-box {
+        margin-left: 0;
+        padding: 18px 12px;
+
+    }
+    /*.product-card{*/
+    /*    max-height: 100%;*/
+    /*}*/
+
+    .product-btn-bag{
+        padding: 10px 15px;
+    }
+    .row {
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: unset;
+    }
+    .row::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .col-3   {
+        width: 100%;
+    }
+    .show-more-btn{
+        display: none;
+    }
+    .col-4{
+        width: 100%;
+    }
+    .col-4 img {
+        width: 100%;
+    }
+    .product-cart a{
+        width: 100%;
+    }
+
+    .news-content-disc{
+        max-height: 160px;
+        overflow: hidden;
+    }
+    .news-content-disc-btn{
+        display: block;
+        width: 100%;
+        padding: 1em;
+        margin: 1em auto 0;
+        background-color: white;
+        color: black;
+        font-weight: 100;
+
+        border: 1px solid #d1d1d170;
+    }
+
+    .gradient {
+        background: linear-gradient(180deg,transparent 0,transparent 80%,#fff);
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
 @media (max-width: 480px){}
 @media (max-width: 320px) {
 
@@ -195,9 +348,7 @@
        width: unset;
    }
 
-   .show-more-btn{
-       display: none;
-   }
+
    .footer-flex-box{
        display: block;
        position: relative;
@@ -219,16 +370,5 @@
 
    }
 
-   .row {
-       overflow-x: auto;
-       display: flex;
-       flex-wrap: unset;
-   }
-   .row::-webkit-scrollbar {
-       width: 0;
-       height: 0;
-   }
-   .col-3   {
-       width: 100%;
-   }
+
 }
