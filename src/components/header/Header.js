@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import heart from "../../icons/heartForHeader.svg"
 import HC from "../../icons/heartWithCircle.svg"
 import bag from "../../icons/shopping-bagBlack.svg"
@@ -14,22 +14,31 @@ import telegram from "../../icons/telegram.svg";
 import whats from "../../icons/whatsapp.svg";
 import telephone from "../../icons/telephone.svg";
 import xxx from "../../icons/XXX.svg";
+import SignUp from "../SignUp/SignUp";
+import {getAuth, signOut} from "firebase/auth";
 
 
 const Header = ({toggleApplication, setToggleApplication}) => {
     const [sel, setSel] = useState([])
     const [getCart, setGetSel] = useState([])
     const [info, setInfo] = useState({})
-    const {selected, cart} = useSelector(s => s)
+    const {selected, cart, user} = useSelector(s => s)
     const [res, setRes] = useState([])
     const [searchRes, setSearchRes] = useState([])
     const [searchStr, setSearchStr] = useState("")
     const [toggleSearch, setToggleSearch] = useState(false)
     const [toggleBurgerMenu, setToggleBurgerMenu] = useState(false)
+    const [toggleModalSearch, setToggleModalSearch] = useState(false)
+    const [authApplication, setAuthApplication] = useState(false)
     const nav = useNavigate()
-
+    const dispatch = useDispatch()
     useEffect(() => {},[cart, selected])
 
+    const logOut = () => {
+        const auth = getAuth();
+        signOut(auth)
+        dispatch({type: "LOG_OUT"})
+    }
 
     useEffect(() => {
         axios("http://localhost:3000/header-footer")
@@ -74,12 +83,21 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                             <Link to="/news">Новости </Link>
                         </div>
 
+                        <div className="d-flex text-center align-items-center justify-content-center">
+                            {
+                                !!user.email
+                                    ? <><p className="m-0 p-0" >{user.email}</p> <div>	&#8195;/&#8195; </div> <div className="log-out" onClick={logOut}>Выйти</div></>
+                                    : <p onClick={() => setAuthApplication(!authApplication)} className="m-0 p-0 " >Войти</p>
+
+                            }
+                        </div>
 
                         <div className="header-tel">
                             <a className="header-tel-link" href={`tel:${info?.tel}`}><span> Тел:</span> {info?.tel}</a>
                         </div>
                     </div>
                 </div>
+
 
 
                 <div>
@@ -93,6 +111,61 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                         <div className="header-logo">
                             <Link to={"/"}><img src={info?.icons?.headericon} alt=""/></Link>
                         </div>
+
+
+
+                        <div className="adaptive-search">
+                            <button onClick={() => setToggleModalSearch(!toggleModalSearch)}  className="search-icon" ><img src={ toggleModalSearch? xxx: searchIcon} alt=""/></button>
+
+                        </div>
+
+                        {toggleModalSearch &&
+                            <div className="adaptive-search-input">
+
+                                <div className="adaptive-search-input-box">
+                                    <input onKeyDown={ e => toggleNav(e)}
+                                           onBlur={ () => {
+                                               setTimeout(() => {
+                                                   setSearchRes([])
+                                                   setToggleSearch(false)
+                                               }, 300)
+
+                                           } }
+                                           placeholder="Поиск"
+                                           onChange={e => search(e.target.value)}
+                                           className="header-search" type="text"/>
+                                    <button onClick={ () => {
+                                        nav("/search", {state: {searchRes, searchStr}})
+                                        setToggleModalSearch(false)
+                                        setSearchStr("")
+                                    }
+                                    }  className="adaptive-search-icon" ><img src={searchIcon} alt=""/></button>
+
+                                    { toggleSearch &&
+                                        <div className="search-res-box">
+                                            <div className="search-items">
+                                                {
+                                                    searchRes?.map(it => {
+                                                        console.log(it)
+                                                        return (
+
+                                                            <Link to={it.id < 8 ? `bestsellers/${it.id}` : `new/${it.id}`}>
+                                                                <div key={it.id + it.count + it.title} className="search-res">
+                                                                    {it.title}
+                                                                </div>
+                                                            </Link>
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+
+                                        </div>}
+
+                                </div>
+
+                            </div>
+                        }
+
 
                         <div className="search">
 
@@ -191,6 +264,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
 
                 </div>
             </div>}
+            {authApplication && <SignUp setAuthApplication={setAuthApplication} /> }
         </header>
     );
 };

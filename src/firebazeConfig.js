@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, connectAuthEmulator, onAuthStateChanged } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
 // import { doc, onSnapshot } from "firebase/firestore";
 
 const firebaseConfig = initializeApp({
@@ -13,6 +15,32 @@ const firebaseConfig = initializeApp({
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 });
 
-export const auth = getAuth()
+export const auth = getAuth(firebaseConfig)
 export const firestore = getFirestore(firebaseConfig)
-console.log(firestore);
+
+export function useAuth() {
+    const [currentUser, setCurrentUser] = useState()
+    const dispatch = useDispatch()
+    useEffect(() => {
+        const unsub = onAuthStateChanged(auth, user => {
+            if(user) {
+                console.log(user)
+                setCurrentUser(user)
+                dispatch({type: "SIGN_UP", user: {email:user.email, id:user.uid, token: user.accessToken},})
+
+            }
+            else {
+                console.log("no user")
+
+            }
+        })
+        return unsub
+    },[])
+    return currentUser
+}
+
+
+
+
+
+// console.log(firestore);

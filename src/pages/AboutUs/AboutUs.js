@@ -12,7 +12,7 @@ const AboutUs = () => {
                     <div className="col-6">
                         <div className="d-flex justify-content-end alight-items-end">
                             <div className="col-7">
-                                <div className="col-6 mb-3">
+                                <div className="col-6 about-margin-bottom">
                                     <img
                                         src="https://cdn.discordapp.com/attachments/978515025473966083/979333461917708318/unknown.png"
                                         alt=""/>
@@ -23,7 +23,7 @@ const AboutUs = () => {
                                         alt=""/>
                                 </div>
                             </div>
-                            <div className="col-4 d-flex align-items-center justify-content-start ms-3 me-5 ">
+                            <div className="col-4 d-flex align-items-center justify-content-start about-margin ms-3  me-5 ">
                                 <img
                                     src="https://cdn.discordapp.com/attachments/978515025473966083/979333516548534352/unknown.png"
                                     alt=""/>

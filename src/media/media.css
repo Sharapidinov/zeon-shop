@@ -151,12 +151,47 @@
         display: none;
     }
     .search{
-        top: 0;
-        width: unset;
-        margin: unset;
+        display: none;
+    }
+    .adaptive-search{
+        display: block;
     }
     .search-icon{
         position: unset;
+    }
+    .adaptive-search-input{
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding-top: 12px;
+    }
+    .adaptive-search-input-box{
+        position: relative;
+        display: flex;
+        background: #E0E0E0;
+        height: 44px;
+        width: 288px;
+
+    }
+    .adaptive-search-input-box input{
+        width: 100%;
+        margin-right: 0;
+        height: 100%;
+    }
+    .adaptive-search-icon{
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        background: none;
+        border: none;
+        z-index: 6;
     }
     .header-content-btn{
         display: none !important;
@@ -181,6 +216,9 @@
     }
     .col-4 img{
         width: 140%;
+    }
+    .col-33{
+        width: 50%;
     }
     .modal-menu{
         display: none;
@@ -230,7 +268,7 @@
         overflow-x: auto;
         display: flex;
         flex-wrap: unset;
-        max-height: 400px;
+
         max-width: 270px;
     }
     .detail-img-flex-box::-webkit-scrollbar {
@@ -281,7 +319,10 @@
     /*.product-card{*/
     /*    max-height: 100%;*/
     /*}*/
-
+    .search-col{
+        width: 60%;
+        margin: 0 auto 12px;
+    }
     .product-btn-bag{
         padding: 10px 15px;
     }
@@ -334,6 +375,50 @@
         position: absolute;
         right: 0;
         top: 0;
+    }
+    .price-card-col {
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        align-self: stretch;
+    }
+    .price-card {
+        position: absolute;
+        bottom: 0;
+        left: -16px;
+        right: 0;
+        z-index: 3;
+        margin-bottom: 0;
+        align-self: stretch;
+        padding: 24px;
+        width: 107%;
+    }
+    .container{
+        padding: 0 16px;
+    }
+    .col-66{
+        padding-bottom: 11em;
+        width: 100%;
+    }
+    .col-5{
+        width: 80%;
+    }
+    .col-33{
+        width: 90%;
+    }
+    .collection.container.row .col-3{
+        width: 90%;
+    }
+    .col-4 {
+        width: 50%;
+    }
+    .about-margin{
+        margin: 0 0 0 12px !important;
+    }
+    .about-margin-bottom{
+        margin-bottom: 12px;
     }
 }
 @media (max-width: 480px){}

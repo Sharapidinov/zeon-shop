@@ -15,7 +15,7 @@ const Main = ({toggleApplication, setToggleApplication}) => {
     const dispatch = useDispatch()
     const [advant, setAdvant] = useState([])
     const {products, newProduct, collection, cart} = useSelector((store) => store)
-    const [bestLim, setBestLim] = useState(4)
+    const [bestLim, setBestLim] = useState(8)
     const [newLim, setNewLim] = useState(4)
     const [colLim, setColLim] = useState(4)
     const nav = useNavigate()
@@ -60,14 +60,14 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                     <div className="row mb-3">
                         {products?.map((it) => {
                             return (
-                                <div key={it?.id} className="col-3">
+                                <div key={it?.id} className="col-33">
                                     <ProductCard it={it} toggle={!it.selected} name={"bestsellers"} />
                                 </div>
                             )
                         })}
                     </div>
                     <div className="show-more-btn">
-                        { +bestLim <= 4 ? <button onClick={() => setBestLim(bestLim + 4)}>Еще</button> : <></>   }
+                        { +bestLim <= 12 ? <button onClick={() => setBestLim(prev => prev + 4)}>Еще</button> : <></>   }
                     </div>
                 </div>
                 <div className="new">
@@ -80,7 +80,7 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                     <div className="row mb-3">
                         {newProduct?.map((it) => {
                             return (
-                                <div key={it?.id} className="col-3">
+                                <div key={it?.id} className="col-33">
                                     <ProductCard toggle={!it.selected} name={"new"} it={it}/>
                                 </div>
                             )
@@ -103,7 +103,9 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                        {
                            collection.map(it => {
                                return(
-                                   <CollectionCard key={it.id} it={it}/>
+                                  <div className="col-33">
+                                      <CollectionCard key={it.id} it={it}/>
+                                  </div>
                                )
                            })
                        }

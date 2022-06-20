@@ -44,7 +44,7 @@ const ColectionS = () => {
                     {
                         col?.products?.map(it => {
                             return(
-                                <div className="col-3">
+                                <div className="col-3 mb-1">
                                     <ProductCard it={it} name={"new"} />
                                 </div>
                             )
@@ -61,7 +61,7 @@ const ColectionS = () => {
 
                 {newProduct?.map((it) => {
                     return (
-                        <div key={it?.id} className="col-4 me-2">
+                        <div key={it?.id} className="col-5">
                             <ProductCard toggle={!it.selected} name={"new"} it={it}/>
                         </div>
                     )

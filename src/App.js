@@ -15,18 +15,25 @@ import ModalMenue from "./components/ModalMenue/ModalMenue";
 import PublicOffer from "./pages/PublicOffer/PublicOffer";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import BreadCrums from "./components/Breadcrums/BreadCrums";
+import Reg from "./pages/Reg/Reg";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {useSelector} from "react-redux";
+import {useAuth} from "./firebazeConfig";
 
 
 
 function App() {
     const [toggleApplication, setToggleApplication] = useState(false)
     const {pathname} = useLocation()
+
+
     useEffect(() => {
             window.scrollTo(0, 0)
-    }, [pathname])
+
+     }, [pathname])
 
 
-
+    useAuth()
     return (
         <div className="App">
             <Header toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />
@@ -42,6 +49,7 @@ function App() {
             <Route path={"/collection/:name/:id"} element={<ColectionS/>}/>
             <Route path={"/PublicOffer"} element={<PublicOffer/>}/>
             <Route path={"/search"} element={<SearchPage/>}/>
+            <Route path={"/register"} element={<Reg/>}/>
            </Routes>
             <Footer/>
 

@@ -13,6 +13,7 @@ const ProductCard = ({name, it, toggle = false}) => {
     const [img, setImg] = useState(it?.image)
 
 
+
     const addToSelect = (it) => {
         it.name = name
         it.selected = true
@@ -55,6 +56,7 @@ const ProductCard = ({name, it, toggle = false}) => {
     }
 
 
+
     return (
         <>
             {!!it && <div onMouseLeave={ () => {setToggleHover(false); setImg(it?.image)}} style={toggleHover? {border:`1px solid #EFE4CF`} : {}} onMouseMove={e=> {handleOnHover(e) }} key={it.id} className="product-card">
@@ -67,6 +69,7 @@ const ProductCard = ({name, it, toggle = false}) => {
                 }
                 {toggleHover && <div className="move-block" style={ {left:`${moveBlock - 20}px`}}></div> }
                 {toggleHover &&  <button onClick={() => addToSelect(it)} className="heart-btn"><img src={!add ? heart : fullHeart} alt=""/></button>}
+                {add &&  <button onClick={() => addToSelect(it)} className="heart-btn"><img src={!add ? heart : fullHeart} alt=""/></button>}
 
                 <Link to={`/${name}/${it?.id}`}> <img className="product-card-img mb-2 " src={img} alt=""/> </Link>
 

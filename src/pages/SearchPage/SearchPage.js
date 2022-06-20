@@ -23,12 +23,12 @@ const SearchPage = () => {
                     Результаты поиска по запросу:{state.searchStr}
                 </div>
 
-                <div className="row">
+                <div className="d-flex flex-wrap">
                     {
                         state.searchRes.map(it => {
 
                             return (
-                                <div className="col-3">
+                                <div className="search-col">
                                     <ProductCard  it={it} toggle={!it.selected} name={it.id > 8 ?"new" :"bestsellers"} />
                                 </div>
                             )

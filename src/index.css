@@ -50,6 +50,11 @@ main{
 .cart{
     min-height: 600px;
 }
+.cart-display-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
 .container{
     max-width: 1166px;
     padding: 0;
@@ -105,6 +110,14 @@ main{
     padding: 4px;
 
 }
+.col-33{
+    width: 25%;
+    padding: 4px;
+
+}
+.about-margin-bottom{
+    margin-bottom: 3em;
+}
 .col-5{
     width: 20%;
     padding: 5px;
@@ -141,6 +154,9 @@ header {
     align-items: center;
 }
 
+.log-out{
+    cursor: pointer;
+}
 
 .header-links *{
     font-family: 'Montserrat', "sans-serif";
@@ -183,6 +199,9 @@ header {
     color: #979797;
     margin-bottom: 16px;
 
+}
+.adaptive-search{
+    display: none;
 }
 .selected-subtitle p {
     font-size: 16px;
@@ -293,7 +312,9 @@ a.header-tel-link:hover{
     background: none;
     border: none;
 }
-
+.search-col{
+    width: 25%;
+}
 .search-res-box{
     position: absolute;
     top: calc(100% - 40px);
@@ -335,6 +356,14 @@ a.header-tel-link:hover{
     margin-top: 11px;
 }
 .pagination-btn{
+    padding: 10px 18px;
+    border: none;
+    background: white;
+    margin: 10px;
+    color: #979797;
+
+}
+.pagination-btn-active{
     padding: 10px 18px;
     border: none;
     background: #1D1D1B;
@@ -444,6 +473,7 @@ a.header-tel-link:hover{
 }
 .slider-img{
     margin: 0 auto;
+    object-fit: cover;
 }
 .slick-dots li button:before{
     width: 10px;
@@ -454,7 +484,105 @@ a.header-tel-link:hover{
 
 }
 
+.singUp-application{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(128,128,128, 0.5);;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
+
+.singUp-application-form{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    text-align: start;
+
+}
+.singUp-application-inp{
+    align-items: flex-start;
+    padding: 10px 12px;
+    gap: 10px;
+    width: 360px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 31, 31, 0.08);
+    border-radius: 3px;
+    margin-bottom: 24px;
+}
+.singUp-application-btn{
+    padding: 14px 20px 13px;
+    gap: 10px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #1D1D1B;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    border: none;
+    color: white;
+    margin-bottom: 12px;
+}
+.singUp-application-link{
+    text-decoration: none;
+    color: #393939;
+    text-align: center;
+}
+
+.singUp-application-link:hover{
+    color: #393939 ;
+    cursor: pointer;
+}
+.reg-application{
+    padding: 32px 0 ;
+}
+
+.reg-application-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px;
+    gap: 10px;
+    background: white;
+    width: 40%;
+    margin: 0 auto;
+}
+.reg-application-box div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.reg-application-box div label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    color: #808080;
+}
+.reg-application-box div input {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 13px 10px 13px 12px;
+    gap: 10px;
+    width: 392px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid #E7E7E7;
+    margin-bottom: 12px;
+}
 
 
 .slick-dots li button *{
@@ -483,8 +611,7 @@ a.header-tel-link:hover{
 
 .product-card{
     background: white;
-    /*width: 100%;*/
-    height: 100%;
+    padding-bottom: 10px;
     position: relative;
 }
 .product-card-img{
@@ -536,13 +663,18 @@ a.header-tel-link:hover{
     width: 10px;
     height: 10px;
     border-radius: 30px;
-    margin-right: 12px;
     border: 0.3px solid gray;
     cursor: pointer;
     text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-right: 13px;
+}
+.color-box{
+    margin-right: 9px;
+    padding: 3px;
+
 }
 
 .show-more-btn{
@@ -877,7 +1009,7 @@ a.header-tel-link:hover{
 
     background: white;
     position: relative;
-
+    margin-right: 22px;
     margin-bottom: 20px;
 }
 .cart-card-box{

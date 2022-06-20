@@ -76,7 +76,7 @@ const Cart = () => {
             <BreadCrums name={"Корзина"}/>
             <div className="container">
                 {cartProducts && cartProducts?.length >= 1
-                ?<div className="row">
+                ?<div className="cart-display-box">
                         <div className="col-66">
                             {cartProducts?.map(it => {
                                 return (

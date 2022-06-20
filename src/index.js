@@ -9,7 +9,7 @@ import "./media/media.css"
 import App from './App';
 import {store} from "./redux";
 import {BrowserRouter} from "react-router-dom";
-// import "./firebazeConfig"
+import "./firebazeConfig"
 
 
 ReactDOM.render(

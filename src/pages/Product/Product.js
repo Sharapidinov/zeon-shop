@@ -7,12 +7,16 @@ import fullheart from "../../icons/full-heart-forparoduct.svg"
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router"
 import ProductCard from "../../components/ProductCard/productCard";
+import ColorItem from "../Help/ColorItem";
+
 
 const Product = () => {
     const [item, setItem] = useState()
     const [toggleColor, setToggleColor] = useState(item?.color[0] || "#73A39D")
     const [toggleBnt, setToggleBtn] = useState(false)
+
     const [randomCard, setRandomCard] = useState([])
+    // const [selected, setSelected] = useState(null)
     const {name, id} = useParams()
     const dispatch = useDispatch()
     const nav = useNavigate()
@@ -85,8 +89,13 @@ const Product = () => {
 
     const checkColor = (color) => {
         setToggleColor(color)
-
     }
+    // const toggleChooseColor = (color) => {
+    //     if (chooseColor === color) {
+    //         return setChooseColor(null)
+    //     }
+    //     setChooseColor(color)
+    // }
 
 
     return (
@@ -143,10 +152,8 @@ const Product = () => {
                                 Цвет:    &#8195;
                                 {
                                     item?.color?.map(color => {
-
                                         return (
-                                            <div onClick={() => checkColor(color)} className="colors"
-                                                 style={{backgroundColor: `${color}`,opacity: "0.6"}}></div>
+                                            <ColorItem checkColor={checkColor} color={color} />
                                         )
                                     })}
                             </div>

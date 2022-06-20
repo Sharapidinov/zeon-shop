@@ -2,13 +2,14 @@ import {createStore} from "redux";
 
 
 const initialState = {
+    user:{
+        email: null,
+        id: null,
+        token: null
+    },
     products: [],
     newProduct:[],
     collection:[],
-    // summerCol:[],
-    // fallCol:[],
-    // winterCol:[],
-    // springCol:[],
     cart:  localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [],
     selected: JSON.parse(localStorage.getItem("selected")) || []
 }
@@ -42,26 +43,21 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 collection: action.collection
             }
-        // case "GET_SUMMER":
-        //     return {
-        //         ...state,
-        //         summerCol: [...state.summerCol, action.summerCol]
-        //     }
-        // case "GET_FALL":
-        //     return {
-        //         ...state,
-        //         fallCol: [...state.fallCol, action.fallCol]
-        //     }
-        // case "GET_WINTER":
-        //     return {
-        //         ...state,
-        //         winterCol: [...state.winterCol, action.winterCol]
-        //     }
-        // case "GET_SPRING":
-        //     return {
-        //         ...state,
-        //         springCol: [...state.springCol, action.springCol]
-        //     }
+        case "SIGN_UP" :
+            return {
+                ...state,
+                user: {...action.user}
+            }
+        case "LOG_OUT" :
+            return {
+                ...state,
+                user: {
+                    email: null,
+                    id: null,
+                    token: null
+                }
+            }
+
         default:
             return state
     }
