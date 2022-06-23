@@ -32,6 +32,10 @@ const Header = ({toggleApplication, setToggleApplication}) => {
     const [authApplication, setAuthApplication] = useState(false)
     const nav = useNavigate()
     const dispatch = useDispatch()
+
+
+
+
     useEffect(() => {},[cart, selected])
 
     const logOut = () => {
@@ -62,10 +66,14 @@ const Header = ({toggleApplication, setToggleApplication}) => {
         setSearchRes( res.filter(it => it.title.toLowerCase().includes(str.toLowerCase())) || [])
         setSearchStr(str)
         setToggleSearch(true)
+
     }
     const toggleNav = (e) => {
         if (e.code === "Enter"){
             nav("/search", {state: {searchRes, searchStr}})
+            setSearchStr("")
+            setToggleSearch(false)
+            setToggleModalSearch(false)
         }
     }
 
@@ -86,7 +94,7 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                         <div className="d-flex text-center align-items-center justify-content-center">
                             {
                                 !!user.email
-                                    ? <><p className="m-0 p-0" >{user.email}</p> <div>	&#8195;/&#8195; </div> <div className="log-out" onClick={logOut}>Выйти</div></>
+                                    ? <><p onClick={() => nav("/order")} className="m-0 p-0 header-pointer " >{user.email}</p> <div>	&#8195;/&#8195; </div> <div className="log-out" onClick={logOut}>Выйти</div></>
                                     : <p onClick={() => setAuthApplication(!authApplication)} className="m-0 p-0 " >Войти</p>
 
                             }
@@ -128,12 +136,15 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                                                setTimeout(() => {
                                                    setSearchRes([])
                                                    setToggleSearch(false)
+                                                   setSearchStr("")
                                                }, 300)
 
                                            } }
                                            placeholder="Поиск"
                                            onChange={e => search(e.target.value)}
+                                           value={searchStr}
                                            className="header-search" type="text"/>
+
                                     <button onClick={ () => {
                                         nav("/search", {state: {searchRes, searchStr}})
                                         setToggleModalSearch(false)
@@ -179,8 +190,12 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                                    } }
                                    placeholder="Поиск"
                                    onChange={e => search(e.target.value)}
+                                   value={searchStr}
                                    className="header-search" type="text"/>
-                            <button onClick={ () => nav("/search", {state: {searchRes, searchStr}}) }  className="search-icon" ><img src={searchIcon} alt=""/></button>
+                            <button onClick={ () =>{
+                                nav("/search", {state: {searchRes, searchStr}})
+                                setSearchStr("")
+                            } }  className="search-icon" ><img src={searchIcon} alt=""/></button>
                             { toggleSearch &&
                                 <div className="search-res-box">
                                 <div className="search-items">
@@ -239,10 +254,19 @@ const Header = ({toggleApplication, setToggleApplication}) => {
                         <div className="selected br mb-2"><Link to="/selected"> <img className="me-3 mb-2"
                                                                                 src={!!sel?.length ? HC : heart}
                                                                                 alt=""/> Избранное </Link></div>
-                        <div className="selected "><Link to="/cart"> <img className="me-3"
+                        <div className="selected mb-3 "><Link to="/cart"> <img className="me-3"
                                                                           src={!!getCart?.length ? fullBag : bag}
                                                                           alt=""/> Корзина</Link></div>
 
+                    </div>
+                    <hr style={{opacity:"0.3"}}/>
+                    <div>
+                        {
+                            !!user.email
+                                ? <><p onClick={() => nav("/order")} className="m-0 mb-3 p-0 header-pointer " >{user.email}</p> <div className="log-out" onClick={logOut}>Выйти</div></>
+                                : <p onClick={() => setAuthApplication(!authApplication)} className="m-0 mb-3 p-0 " >Войти</p>
+
+                        }
                     </div>
 
                 </div>

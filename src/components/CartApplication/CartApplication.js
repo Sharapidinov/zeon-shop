@@ -7,9 +7,10 @@ import axios from "axios";
 import check from "../../icons/check.svg";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 const CartApplication = ({setToggleApplication, cartProducts}) => {
+    const {user} = useSelector(s => s)
     const [toggle, setToggle] = useState(false)
     const [numValue, setNumValue] = useState("")
     const {handleSubmit, reset, register, formState: {errors, isValid}} = useForm({
@@ -20,7 +21,15 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
 
 
     useEffect(() => {
+
     }, [errors])
+
+    useEffect(() => {
+        document.body.style.overflow = "hidden"
+        return () => {
+            document.body.style.overflow = "auto"
+        }
+    },[])
 
     console.log(errors)
 
@@ -31,7 +40,9 @@ const CartApplication = ({setToggleApplication, cartProducts}) => {
             products: [...cartProducts],
             finalPayment: `${cartProducts?.reduce((acc, it) => {
                 return +(acc + (+it?.price * it.count) * it.amount) - it.count * Math.ceil(it?.price - (it?.price - (+it?.price / 100 * +it?.discount) * it?.amount))
-            }, 0)} рублей`
+            }, 0)} рублей`,
+            uid: user.id,
+            time: `${new Date()}`.split(" ").splice(1,4).join(" ")
         }
         console.log(product)
         axios.post("http://localhost:3000/application", product).then(({data}) => {

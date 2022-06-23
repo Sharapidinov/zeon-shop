@@ -19,6 +19,7 @@ import Reg from "./pages/Reg/Reg";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import {useSelector} from "react-redux";
 import {useAuth} from "./firebazeConfig";
+import Orders from "./pages/Orders/Orders";
 
 
 
@@ -50,6 +51,7 @@ function App() {
             <Route path={"/PublicOffer"} element={<PublicOffer/>}/>
             <Route path={"/search"} element={<SearchPage/>}/>
             <Route path={"/register"} element={<Reg/>}/>
+            <Route path={"/order"} element={<Orders/>}/>
            </Routes>
             <Footer/>
 

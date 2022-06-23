@@ -17,6 +17,14 @@ const HeaderApplication = ({setToggleApplication}) => {
 
 
     useEffect(() => {
+        document.body.style.overflow = "hidden"
+        return () => {
+            document.body.style.overflow = "auto"
+        }
+    },[])
+
+
+    useEffect(() => {
         if(nameError || telError){
             setFormValid(false)
         }

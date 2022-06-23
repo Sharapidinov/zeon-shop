@@ -11,10 +11,16 @@ const Selected = () => {
     const selector = useSelector(s => s)
     const [isLoading, setIsLoading] = useState(true)
     const [pag, setPag] = useState(4)
+    const {user} = useSelector(S => S)
 
 
     useEffect(() => {
         setSelected(JSON.parse(localStorage.getItem("selected")))
+        // axios(` http://localhost:3000/selected`)
+        //     .then(({data}) => {
+        //         setSelected(data.filter(it => it.uid === user.id))
+        //         console.log(data)
+        //     })
 
         if (isLoading){
             setSelected(JSON.parse(localStorage.getItem("selected")))
@@ -24,26 +30,10 @@ const Selected = () => {
         if (!selected?.length){
             axios(`http://localhost:3000/bestsellers?&_limit=2`).then(({data}) => setRandomCard(data))
             axios(`http://localhost:3000/new?&_limit=3`).then(({data}) => setRandomCard(prevState => [...prevState, ...data]))
-            console.log(randomCard)
         }
         setIsLoading(false)
 
-    }, [sel,selector?.length])
-    //
-    // useEffect(() => {
-    //     document.addEventListener("scroll", scrollHendler)
-    //     return function () {
-    //         document.removeEventListener("scroll", scrollHendler)
-    //     }
-    // },[isLoading])
-    //
-    // const scrollHendler = (e) => {
-    //     console.log(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight))
-    //     if(e.target.documentElement.scrollHeight - 100 - (e.target.documentElement.scrollTop + window.innerHeight) < 100 && selected.length > pag){
-    //         setIsLoading(true)
-    //         console.log(true)
-    //     }
-    // }
+    }, [sel,selector?.length, user])
 
 
     return (
@@ -59,7 +49,7 @@ const Selected = () => {
                     {selected?.length ?  `Товаров в избранном: ${selected?.length}` : <p>У Вас пока нет избранных товаров</p>}
                 </div>
                 <div className="row">
-                    {selected?.filter((it,idx) => idx < pag)
+                    {selected
                         ?.map((it) => {
 
                         return (

@@ -17,7 +17,11 @@ const SearchPage = () => {
 
     return (
         <section className="search-page">
+
+
             <BreadCrums name={"Результаты поиска"}/>
+
+
             <div className="container">
                 <div className="search-title">
                     Результаты поиска по запросу:{state.searchStr}

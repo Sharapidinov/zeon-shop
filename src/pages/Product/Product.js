@@ -4,7 +4,7 @@ import {useParams,} from "react-router-dom";
 import bag from "../../icons/shopping-bag 1.svg"
 import heart from "../../icons/heart.svg"
 import fullheart from "../../icons/full-heart-forparoduct.svg"
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router"
 import ProductCard from "../../components/ProductCard/productCard";
 import ColorItem from "../Help/ColorItem";
@@ -14,7 +14,7 @@ const Product = () => {
     const [item, setItem] = useState()
     const [toggleColor, setToggleColor] = useState(item?.color[0] || "#73A39D")
     const [toggleBnt, setToggleBtn] = useState(false)
-
+    const {user} = useSelector(s => s)
     const [randomCard, setRandomCard] = useState([])
     // const [selected, setSelected] = useState(null)
     const {name, id} = useParams()
@@ -66,6 +66,7 @@ const Product = () => {
     }
 
     const addToCart = (it) => {
+
 
         const cart = localStorage.getItem("cart")
         let newCart = cart ? JSON?.parse(cart) : []
@@ -154,6 +155,7 @@ const Product = () => {
                                     item?.color?.map(color => {
                                         return (
                                             <ColorItem checkColor={checkColor} color={color} />
+
                                         )
                                     })}
                             </div>
@@ -197,12 +199,12 @@ const Product = () => {
                             {
                                 toggleBnt ?
                                     <button onClick={() => nav("/cart") } className=" product-info-box-btn">Перейти в корзину</button>
-                                    : <button onClick={() => addToCart(item)}
+                                    : <button disabled={!user.id} onClick={() => addToCart(item)}
                                               className="product-info-box-btn"><img src={bag}
                                                                                                  alt=""/> Добавить в
                                         корзину</button>
                             }
-                            <button onClick={() => addToSelect(item)} className="product-btn-bag "><img
+                            <button disabled={!user.id}  onClick={() => addToSelect(item)} className="product-btn-bag "><img
                                 src={!!add ? fullheart : heart} alt=""/></button>
                         </div>
 

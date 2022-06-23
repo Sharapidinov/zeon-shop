@@ -421,7 +421,39 @@
         margin-bottom: 12px;
     }
 }
-@media (max-width: 480px){}
+@media (max-width: 480px){
+
+    .num-application-box{
+        max-width: 90%;
+        padding: 24px 16px;
+    }
+    .num-application-title{
+        font-size: 14px;
+        line-height: 125%;
+        color: #393939;
+    }
+    .num-application-subtitle{
+        font-size: 12px;
+        line-height: 125%;
+        color: #393939;
+        max-width: 80%;
+    }
+    .num-application-inp{
+        width: 100%;
+    }
+    .num-application-inp div input{
+        width: 100%;
+    }
+    .num-application-btn{
+        width: 100%;
+        padding: 14px 20px 13px;
+    }
+
+    .singUp-application-form{
+        width: 90%;
+    }
+
+}
 @media (max-width: 320px) {
 
     footer{

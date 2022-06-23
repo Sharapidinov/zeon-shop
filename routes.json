@@ -1,0 +1,3 @@
+{
+  "/selected\\?uid=:uid\\&id=:id": "/selected/:uid/:id"
+}

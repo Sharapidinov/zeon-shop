@@ -7470,290 +7470,12 @@
   ],
   "application": [
     {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
+      "name": "chou",
+      "lastName": "django",
       "email": "test123@gmail.com",
       "telNum": "+996 784 854 215",
       "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Платье на отдых",
-          "id": "4",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593186136088576/Rectangle_491_3.png"
-        },
-        {
-          "title": "Летнее платье",
-          "id": "3",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "40",
-          "size": "42-50",
-          "color": "#032F72",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185792147456/Rectangle_491_4.png"
-        },
-        {
-          "title": "Летнее платье",
-          "id": "3",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "40",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185792147456/Rectangle_491_4.png"
-        }
-      ],
-      "finalPayment": "15015",
-      "id": 1
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "1",
-          "selected": "false",
-          "cart": "false",
-          "count": 4,
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "30",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978592713463181322/Rectangle_406.png"
-        }
-      ],
-      "finalPayment": "19108 рублей",
-      "id": 2
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "1",
-          "selected": "false",
-          "cart": "false",
-          "count": 4,
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "30",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978592713463181322/Rectangle_406.png"
-        }
-      ],
-      "finalPayment": "19108 рублей",
-      "id": 3
-    },
-    {
-      "name": "csdvfbghjm",
-      "lastName": "sdfgdhfjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "edfrgthyju",
-      "city": "fghj",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "9",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
-        }
-      ],
-      "finalPayment": "3412 рублей",
-      "id": 4
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "11",
-          "selected": "false",
-          "cart": "false",
-          "count": 35,
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600337487314974/unknown.png"
-        },
-        {
-          "title": "Кардиган",
-          "id": "5",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593186463240232/Rectangle_491_2.png"
-        }
-      ],
-      "finalPayment": "122832 рублей",
-      "id": 5
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "11",
-          "selected": "false",
-          "cart": "false",
-          "count": 35,
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600337487314974/unknown.png"
-        },
-        {
-          "title": "Кардиган",
-          "id": "5",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593186463240232/Rectangle_491_2.png"
-        }
-      ],
-      "finalPayment": "122832 рублей",
-      "id": 6
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Платье на отдых",
-          "id": "4",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593186136088576/Rectangle_491_3.png"
-        }
-      ],
-      "finalPayment": "6825 рублей",
-      "id": 7
-    },
-    {
-      "name": "sdfsd",
-      "lastName": "dsfghjk",
-      "email": "austie2204@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "sdfsd",
-      "city": "sdfsd",
+      "city": "qwertyuio",
       "agree": true,
       "products": [
         {
@@ -7774,172 +7496,22 @@
           "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
         },
         {
-          "title": "Вечернее платье",
-          "id": "9",
+          "title": "Платье",
+          "id": "2",
           "selected": "false",
           "cart": "false",
           "count": "1",
           "artikule": "Платье PL984/dakota",
           "price": "1365",
-          "discount": "50",
+          "discount": "10",
           "size": "42-50",
-          "color": "#73A39D",
+          "color": "#84CC4C",
           "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
           "amount": "5",
           "structure": "Полиэстер",
           "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
+          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
         },
-        {
-          "title": "Вечернее платье",
-          "id": "9",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#032F72",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
-        }
-      ],
-      "finalPayment": "12966 рублей",
-      "id": 8
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "10",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
-        }
-      ],
-      "finalPayment": "3412 рублей",
-      "id": 9
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "10",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
-        }
-      ],
-      "finalPayment": "3412 рублей",
-      "id": 10
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "9",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
-        }
-      ],
-      "finalPayment": "3412 рублей",
-      "id": 11
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "9",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
-        }
-      ],
-      "finalPayment": "3412 рублей",
-      "id": 12
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "austie2204@gmail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
         {
           "title": "Платье",
           "id": "2",
@@ -7950,72 +7522,29 @@
           "price": "1365",
           "discount": "10",
           "size": "42-50",
-          "color": "#73A39D",
+          "color": "#032F72",
           "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
           "amount": "5",
           "structure": "Полиэстер",
           "material": "Полиэстер",
           "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
-        }
-      ],
-      "finalPayment": "6142 рублей",
-      "id": 13
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@mail.com",
-      "telNum": "+996 784 854 215",
-      "country": "fdghjkl",
-      "city": "hfhfg",
-      "agree": true,
-      "products": [
+        },
         {
-          "title": "Летнее платье",
-          "id": "3",
+          "title": "Платье",
+          "id": "2",
           "selected": "false",
           "cart": "false",
-          "count": 2,
+          "count": "1",
           "artikule": "Платье PL984/dakota",
           "price": "1365",
-          "discount": "40",
+          "discount": "10",
           "size": "42-50",
           "color": "#AB844A",
           "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
           "amount": "5",
           "structure": "Полиэстер",
           "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185792147456/Rectangle_491_4.png"
-        }
-      ],
-      "finalPayment": "8190 рублей",
-      "id": 14
-    },
-    {
-      "name": "dsfghfbgd",
-      "lastName": "dsfghjk",
-      "email": "test123@gmail.com",
-      "telNum": "+7 08785445645",
-      "country": "fdghjkl",
-      "city": "fghjkl;l",
-      "agree": true,
-      "products": [
-        {
-          "title": "Вечернее платье",
-          "id": "9",
-          "selected": "false",
-          "cart": "false",
-          "count": "1",
-          "artikule": "Платье PL984/dakota",
-          "price": "1365",
-          "discount": "50",
-          "size": "42-50",
-          "color": "#73A39D",
-          "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
-          "amount": "5",
-          "structure": "Полиэстер",
-          "material": "Полиэстер",
-          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978600276997050368/unknown.png"
+          "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
         },
         {
           "title": "Платье",
@@ -8027,7 +7556,7 @@
           "price": "1365",
           "discount": "10",
           "size": "42-50",
-          "color": "#73A39D",
+          "color": "#6977F0",
           "discription": "За последние 35 лет бренд Bonucci из обычного производителя одежды превратился в широко узнаваемую марку, а его продукция – в синоним высокого качества и актуального стиля.",
           "amount": "5",
           "structure": "Полиэстер",
@@ -8035,8 +7564,11 @@
           "image": "https://cdn.discordapp.com/attachments/978515025473966083/978593185255292988/Rectangle_491_5.png"
         }
       ],
-      "finalPayment": "9554 рублей",
-      "id": 15
+      "finalPayment": "30710 рублей",
+      "uid": "XrwbfLJA88f51KcyVxX808NQ4cq1",
+      "time": "Jun 22 2022 17:01:48",
+      "id": 2
     }
-  ]
+  ],
+  "selected": []
 }

@@ -31,7 +31,6 @@ const Cart = () => {
     const deleteFromCart = (it) => {
         let newCart = cartProducts
 
-
         const indx = newCart.findIndex(item => it?.id === item?.id && it?.color === item?.color)
         newCart.splice(indx, 1)
         localStorage?.setItem("cart", JSON.stringify(newCart))

@@ -9,7 +9,6 @@ import BreadCrums from "../../components/Breadcrums/BreadCrums";
 import ModalMenue from "../../components/ModalMenue/ModalMenue";
 
 
-
 const Main = ({toggleApplication, setToggleApplication}) => {
 
     const dispatch = useDispatch()
@@ -40,13 +39,10 @@ const Main = ({toggleApplication, setToggleApplication}) => {
     }, [newLim, bestLim, colLim, cart])
 
 
-
     return (
 
 
         <main>
-
-
             {products.length && newProduct.length && <div className="container">
                 <div className="slider">
                     <SimpleSlider/>
@@ -61,13 +57,13 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                         {products?.map((it) => {
                             return (
                                 <div key={it?.id} className="col-33">
-                                    <ProductCard it={it} toggle={!it.selected} name={"bestsellers"} />
+                                    <ProductCard it={it} toggle={!it.selected} name={"bestsellers"}/>
                                 </div>
                             )
                         })}
                     </div>
                     <div className="show-more-btn">
-                        { +bestLim <= 12 ? <button onClick={() => setBestLim(prev => prev + 4)}>Еще</button> : <></>   }
+                        {+bestLim <= 12 ? <button onClick={() => setBestLim(prev => prev + 4)}>Еще</button> : <></>}
                     </div>
                 </div>
                 <div className="new">
@@ -87,33 +83,31 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                         })}
                     </div>
                     <div className="show-more-btn">
-                        { +newLim <= 4 ? <button onClick={() => setNewLim(newLim + 4)} >Еще</button> : <></>   }
+                        {+newLim <= 4 ? <button onClick={() => setNewLim(newLim + 4)}>Еще</button> : <></>}
                     </div>
                 </div>
             </div>}
 
             <div className="collection">
-               <div className="container">
-                   <div className="title">
-                       Коллекция
-                   </div>
-
-
-                   <div className="row mb-5 d-flex">
-                       {
-                           collection.map(it => {
-                               return(
-                                  <div className="col-33">
-                                      <CollectionCard key={it.id} it={it}/>
-                                  </div>
-                               )
-                           })
-                       }
-                   </div>
-                   <div className="show-more-btn">
-                       { +colLim <= 4 ? <button onClick={() => setColLim(colLim + 4)}>Еще</button> : <></>   }
-                   </div>
-               </div>
+                <div className="container">
+                    <div className="title">
+                        Коллекция
+                    </div>
+                    <div className="row mb-5 d-flex">
+                        {
+                            collection.map(it => {
+                                return (
+                                    <div className="col-33 mb-2">
+                                        <CollectionCard key={it.id} it={it}/>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="show-more-btn">
+                        {+colLim <= 4 ? <button onClick={() => setColLim(colLim + 4)}>Еще</button> : <></>}
+                    </div>
+                </div>
             </div>
 
 
@@ -140,7 +134,7 @@ const Main = ({toggleApplication, setToggleApplication}) => {
                     </div>
                 </div>
             </div>
-            <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication} />
+            <ModalMenue toggleApplication={toggleApplication} setToggleApplication={setToggleApplication}/>
         </main>
     );
 };

@@ -6,7 +6,11 @@ const AboutUs = () => {
 
     return (
         <section className="about-us">
+
+
             <BreadCrums name={"О нас"}/>
+
+
             <div className="container">
                 <div className="about-us-felx-box">
                     <div className="col-6">

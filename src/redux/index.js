@@ -11,7 +11,8 @@ const initialState = {
     newProduct:[],
     collection:[],
     cart:  localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [],
-    selected: JSON.parse(localStorage.getItem("selected")) || []
+    selected: [ localStorage.getItem("selected") ? JSON.parse(localStorage.getItem("selected")) : []]
+    // selected: JSON.parse(localStorage.getItem("selected")) || []
 }
 
 const reducer = (state = initialState, action) => {

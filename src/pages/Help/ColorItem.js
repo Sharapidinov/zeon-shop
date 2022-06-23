@@ -11,9 +11,13 @@ const ColorItem = ({color, checkColor}) => {
     }
 
     return (
-        <div onClick={() => toggleChooseColor(color)} style={chooseColor ? {border:" 1px solid #858F9B"} : {}} className="color-box">
+        <div onClick={() => toggleChooseColor(color)}  className="color-box">
             <div onClick={() => checkColor(color)} className="colors"
-                 style={{backgroundColor: `${color}`,opacity: "0.6"}}></div>
+                 style={{backgroundColor: `${color}`,opacity: "0.6"}}>
+                <input type="radio" name="color" defaultChecked={color === "#73A39D"} id={color}/>
+                <label htmlFor={color}></label>
+            </div>
+
         </div>
     );
 };

@@ -64,7 +64,7 @@ main{
     display: none;
 }
 .modal-menu{
-    position: fixed;
+    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -228,6 +228,9 @@ header {
     align-items: center;
     text-align: center;
 }
+.header-pointer{
+    cursor: pointer;
+}
 .header-tel *{
     cursor: pointer;
     font-weight: 400;
@@ -314,6 +317,7 @@ a.header-tel-link:hover{
 }
 .search-col{
     width: 25%;
+    padding: 8px;
 }
 .search-res-box{
     position: absolute;
@@ -497,7 +501,11 @@ a.header-tel-link:hover{
     justify-content: center;
     text-align: center;
 }
-
+.singUp-application-close{
+    width: 15px;
+    position: absolute;
+    right: 30px;
+}
 
 .singUp-application-form{
     background: white;
@@ -506,13 +514,13 @@ a.header-tel-link:hover{
     justify-content: space-between;
     padding: 24px;
     text-align: start;
-
+    position: relative;
 }
 .singUp-application-inp{
     align-items: flex-start;
     padding: 10px 12px;
     gap: 10px;
-    width: 360px;
+    max-width: 360px;
     height: 44px;
     background: #FFFFFF;
     border: 1px solid rgba(31, 31, 31, 0.08);
@@ -577,7 +585,7 @@ a.header-tel-link:hover{
     align-items: flex-start;
     padding: 13px 10px 13px 12px;
     gap: 10px;
-    width: 392px;
+    max-width: 392px;
     height: 44px;
     background: #FFFFFF;
     border: 1px solid #E7E7E7;
@@ -660,8 +668,8 @@ a.header-tel-link:hover{
     margin-bottom: 10px;
 }
 .colors{
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 30px;
     border: 0.3px solid gray;
     cursor: pointer;
@@ -669,12 +677,33 @@ a.header-tel-link:hover{
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-right: 13px;
+    /*margin-right: 13px;*/
+    position: relative;
+    margin: 0 auto;
 }
 .color-box{
     margin-right: 9px;
     padding: 3px;
 
+}
+.color-box input{
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+}
+.color-box input:checked + label:before{
+    content: "";
+    width: 18px;
+    height: 17px;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left:-1px;
+    bottom: 0;
+    transform: translate(-3px, -3px);
+    border: 1px solid #393939;
+    cursor: pointer;
+    align-items: center;
 }
 
 .show-more-btn{
@@ -998,7 +1027,6 @@ a.header-tel-link:hover{
     padding: 0 16px 16px;
 }
 .accordion-content.show{
-
     height: auto;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
@@ -1389,6 +1417,82 @@ input#agree{
 .cart-application-box-checkbox label a{
     margin-left: 5px;
     text-decoration: none;
+
+}
+
+
+.orders{
+    padding: 12px 0 90px;
+
+}
+.orders-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #393939;
+    margin-bottom: 24px;
+    padding-left: 12px;
+}
+
+.order-card-box{
+    padding: 12px;
+    border: 1px solid #BFBFBF ;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+.order-card-box div{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #979797;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.order-card-box span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    color: #393939;
+}
+.order-product-box{
+    display: flex;
+    overflow-x: auto;
+}
+.order-product-box::-webkit-scrollbar {
+    height: 10px;
+}
+.order-product-col {
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.order-product-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.order-product-flex{
+    display: unset;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.dash{
+    border-top: 1px dashed #BFBFBF;
+    margin-top: 5px;
+    padding-top: 24px;
+}
+
+.order-accordion-conent-item{
+    display: flex;
+    flex-direction: column;
 }
 
 .PhoneInputCountry{

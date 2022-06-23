@@ -24,7 +24,7 @@ export function useAuth() {
     useEffect(() => {
         const unsub = onAuthStateChanged(auth, user => {
             if(user) {
-                console.log(user)
+
                 setCurrentUser(user)
                 dispatch({type: "SIGN_UP", user: {email:user.email, id:user.uid, token: user.accessToken},})
 
